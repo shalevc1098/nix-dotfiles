@@ -1,0 +1,57 @@
+// Options in this file override the defaults in:
+//     ~/.config/ags/modules/.configuration/default_options.jsonc
+//
+// vscode: ctrl+click this: file://./modules/.configuration/default_options.jsonc
+// vim: `:vsp` to split window, move cursor to the path, press `gf`. 
+//      `Ctrl-w` twice to switch between the files
+//
+// Limitations of this file:
+// * Only line comments (//) are allowed
+// * Comments are not allowed in or below the actual content
+//   (will be nuked with updates from the UI)
+//
+// 
+// Example: Put this to show 8 (instead of 10) workspaces on the bar
+// "workspaces": {"shown": 8 }
+//
+{
+    "sidebar": {
+        "pages": {
+            "apis": {
+                "defaultPage": "wallpaper"
+            },
+            "defaultPage": "apis"
+        }
+    },
+    "ai": {
+        "defaultGPTProvider": "openrouter"
+    },
+    "appearance": {
+        "barRoundCorners": 0,
+        "fakeScreenRounding": 0
+    },
+    "icons": {
+        "searchPaths": [
+            ""
+        ],
+        "symbolicIconTheme": {
+            "dark": "Adwaita",
+            "light": "Adwaita"
+        },
+        "substitutions": {
+            "code-url-handler": "visual-studio-code",
+            "code": "visual-studio-code",
+            "GitHub Desktop": "github-desktop",
+            "Minecraft* 1.20.1": "minecraft",
+            "gnome-tweaks": "org.gnome.tweaks",
+            "pavucontrol-qt": "pavucontrol",
+            "wps": "wps-office2019-kprometheus",
+            "wpsoffice": "wps-office2019-kprometheus",
+            "footclient": "foot",
+            "zen": "zen-browser",
+            "spotify": "spotify-client",
+            "Terraria.bin.x86_64": "terraria",
+            "": "image-missing"
+        }
+    }
+}
