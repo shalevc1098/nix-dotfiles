@@ -15,10 +15,9 @@
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -38,22 +37,39 @@
     pulse.enable = true;
   };
 
-  # PAM
-  security = {
-    pam.services.hyprlock.text = "auth include login";
-  };
-
   # Graphics
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "vmware" ];
-  virtualisation.vmware.guest.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+  };
+  
+  # Enable NVIDIA persistence daemon
+  services.xserver.displayManager.setupCommands = ''
+    ${pkgs.systemd}/bin/systemctl restart nvidia-persistenced
+  '';
 
   # Enable i2c
   hardware.i2c.enable = true;
+
+  # Enable colord for color profile management
+  services.colord.enable = true;
+
+  # Enable Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
@@ -176,7 +192,7 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  # networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

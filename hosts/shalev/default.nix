@@ -8,21 +8,37 @@ let
     ../../modules/audio
 
     # Packages
-    ../../modules/agsv1
+    # ../../modules/ags
     ../../modules/cliphist
+    ../../modules/dankmaterialshell
     ../../modules/dev-tools
+    # ../../modules/dunst
     ../../modules/hypr
-    # ../../modules/fish
-    ../../modules/fcitx5
+    ../../modules/fan-control
+    # ../../modules/fcitx5
+    ../../modules/fish
+    ../../modules/firefox
     ../../modules/foot
+    # ../../modules/fuzzel
+    ../../modules/gnome
     ../../modules/kde
+    ../../modules/matugen
+    # ../../modules/noctalia
+    ../../modules/obs-studio
+    # ../../modules/quickshell
+    ../../modules/screenshot
+    ../../modules/spotify
     ../../modules/ssh
     ../../modules/starship
     ../../modules/swww
+    ../../modules/vencord
+    # ../../modules/waybar
     ../../modules/wlogout
+    ../../modules/wlsunset
     ../../modules/wofi
+    ../../modules/xdg
     ../../modules/xiccd
-    ../../modules/zsh
+    # ../../modules/zsh
 
     # Theme
     ../../modules/theme
@@ -49,6 +65,7 @@ lib.nixosSystem {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = { inherit inputs; };
+      home-manager.backupFileExtension = "backup";
 
       home-manager.users.shalev = {
         imports = homeModules;

@@ -13,7 +13,7 @@ let
     ../../modules/dev-tools
     ../../modules/hypr
     # ../../modules/fish
-    ../../modules/fcitx5
+    # ../../modules/fcitx5
     ../../modules/foot
     ../../modules/kde
     ../../modules/ssh
