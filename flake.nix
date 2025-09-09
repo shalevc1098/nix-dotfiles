@@ -10,7 +10,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agsv1.url = "github:Aylur/ags?ref=v1";
+    ags.url = "github:aylur/ags";
+
+    astal.url = "github:aylur/astal";
 
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -30,12 +32,41 @@
     #   };
     # };
 
+    matugen.url = "github:InioX/matugen";
+
     mysecrets = {
       url = "git+ssh://git@github.com/shalevc1098/nix-secrets?shallow=1";
       flake = false;
     };
 
     nix-gaming.url = "github:fufexan/nix-gaming";
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankmaterialshell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    apple-fonts.url = "path:./modules/custom-fonts/apple-fonts";
+    
+    apple-emoji-linux = {
+      url = "github:samuelngs/apple-emoji-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   #   outputs =
