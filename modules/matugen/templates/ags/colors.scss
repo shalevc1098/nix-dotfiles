@@ -1,0 +1,9 @@
+// Matugen generated colors for AGS
+
+// Surface with transparency
+$surface-alpha: {{colors.surface.default.rgba | set_alpha: 0.5}};
+
+// All color variables
+<* for name, value in colors *>
+${{name}}: {{value.default.hex}};
+<* endfor *>
