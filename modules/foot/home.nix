@@ -1,9 +1,16 @@
+{ config, ... }:
 {
   programs.foot = {
     enable = true;
     settings = {
       main = {
-        shell = "zsh";
+        shell =
+          if config.programs.fish.enable then
+            "fish"
+          else if config.programs.zsh.enable then
+            "zsh"
+          else
+            null;
         term = "xterm-256color";
         title = "foot";
         font = "SpaceMono Nerd Font:size=11";
@@ -11,6 +18,9 @@
         dpi-aware = "no";
         pad = "25x25";
         bold-text-in-bright = "no";
+        include = [
+          "~/.config/foot/colors.ini"
+        ];
       };
       scrollback = {
         lines = 10000;
@@ -33,6 +43,9 @@
         find-next = "F3 Control+G";
       };
     };
+    # extraConfig = ''
+    #   include ./colors.ini
+    # '';
   };
 
   wayland.windowManager.hyprland.settings.bind = [
