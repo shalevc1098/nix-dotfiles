@@ -5,7 +5,24 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhs;
+    package = pkgs.vscode.fhsWithPackages (
+      ps: with ps; [
+        ps.libsecret
+        ps.gnome-keyring
+        ps.dbus
+      ]
+    );
+  };
+
+  xdg.mimeApps = {
+    associations = {
+      added = {
+        "x-scheme-handler/vscode" = [ "code-url-handler.desktop" ];
+      };
+    };
+    defaultApplications = {
+      "x-scheme-handler/vscode" = [ "code-url-handler.desktop" ];
+    };
   };
 
   wayland.windowManager.hyprland.settings = {
