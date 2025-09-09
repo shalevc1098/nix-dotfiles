@@ -29,21 +29,33 @@ in
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
+  # programs.hyprland = {
+  #   enable = true;
+  #   withUWSM = true;
+
+  #   package =
+  #     (inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland.overrideAttrs {
+  #       patches = [ hyprland-patch ];
+  #     }).override
+  #       {
+  #         inherit xwayland;
+  #       };
+  #   portalPackage =
+  #     inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  # };
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
 
     package =
-      (inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland.overrideAttrs {
-        patches = [ hyprland-patch ];
-      }).override
-        {
-          inherit xwayland;
-        };
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage =
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
-  environment.systemPackages = [ xwayland ];
+
+  # environment.systemPackages = [ xwayland ];
+  environment.systemPackages = [ pkgs.xwayland ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

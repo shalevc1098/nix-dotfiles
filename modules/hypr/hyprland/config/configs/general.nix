@@ -1,8 +1,11 @@
 {
+  source = [
+    "~/.config/hypr/colors.conf"
+  ];
+
   monitor = [
-    ",preferred,auto,1"
-    # DP-5, 3480x2160@240, 0x0, 1.5
-    # DP-6, 1920x1080@240, auto, 1
+    "DP-5, 3840x2160@239.99Hz, 0x0, 1.5"
+    "DP-6, 1920x1080@240, auto, 1"
   ];
 
   input = {
@@ -25,9 +28,9 @@
   };
 
   gestures = {
-    workspace_swipe = true;
+    # workspace_swipe = true;
     workspace_swipe_distance = 700;
-    workspace_swipe_fingers = 4;
+    # workspace_swipe_fingers = 4;
     workspace_swipe_cancel_ratio = 0.2;
     workspace_swipe_min_speed_to_force = 5;
     workspace_swipe_direction_lock = true;
@@ -41,8 +44,8 @@
     gaps_workspaces = 50;
     border_size = 1;
 
-    "col.active_border" = "rgba(0DB7D4FF)";
-    "col.inactive_border" = "rgba(31313600)";
+    # "col.active_border" = "rgba(0DB7D4FF)";
+    # "col.inactive_border" = "rgba(31313600)";
 
     resize_on_border = true;
     no_focus_fallback = true;
@@ -139,13 +142,13 @@
     initial_workspace_tracking = false;
   };
 
-  # render = {
-  #   explicit_sync = 2;
-  #   explicit_sync_kms = 0;
-  # };
-
   opengl = {
     nvidia_anti_flicker = 0;
+  };
+
+  render = {
+    # Force direct scanout for better performance
+    direct_scanout = true;
   };
 
   debug = {
@@ -153,7 +156,7 @@
   };
 
   xwayland = {
-    # force_zero_scaling = true;
+    force_zero_scaling = true;
   };
 
   # Overview

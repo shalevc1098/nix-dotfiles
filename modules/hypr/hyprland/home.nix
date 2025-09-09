@@ -6,14 +6,17 @@
   ...
 }:
 {
-  imports = [ ./hidpi-xprop.nix ];
+  # imports = [ ./hidpi-xprop.nix ];
 
   home.packages = with pkgs; [
     brightnessctl
     ddcutil
     dart-sass
     wl-clipboard
+    playerctl
   ];
+
+  services.playerctld.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
