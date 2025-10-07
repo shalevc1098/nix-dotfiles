@@ -9,6 +9,7 @@ let
 
     # Packages
     # ../../modules/ags
+    ../../modules/anime
     ../../modules/cliphist
     ../../modules/dankmaterialshell
     ../../modules/dev-tools
@@ -21,8 +22,11 @@ let
     ../../modules/foot
     # ../../modules/fuzzel
     ../../modules/gnome
+    ../../modules/greetd
     ../../modules/kde
+    ../../modules/kitty
     ../../modules/matugen
+    ../../modules/mpv
     # ../../modules/noctalia
     ../../modules/obs-studio
     # ../../modules/quickshell
