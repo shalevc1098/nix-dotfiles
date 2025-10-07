@@ -147,7 +147,6 @@
   };
 
   render = {
-    # Force direct scanout for better performance
     direct_scanout = true;
   };
 

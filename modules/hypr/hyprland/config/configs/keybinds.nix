@@ -84,9 +84,9 @@
     ", XF86AudioPause, exec, playerctl play-pause"
     ", XF86AudioNext, exec, playerctl next"
     ", XF86AudioPrev, exec, playerctl previous"
-    "Super+Shift, P, exec, playerctl play-pause" # Play/pause
-    "Super+Shift, N, exec, playerctl next" # Next track
-    "Super+Shift, B, exec, playerctl previous" # Previous track
+    # "Super+Shift, P, exec, playerctl play-pause" # Play/pause
+    # "Super+Shift, N, exec, playerctl next" # Next track
+    # "Super+Shift, B, exec, playerctl previous" # Previous track
   ];
 
   bindle = [
