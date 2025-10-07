@@ -10,7 +10,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk3";
+    platformTheme.name = "kde";
     style = {
       name = "kvantum";
       package = pkgs.libsForQt5.qtstyleplugin-kvantum;
