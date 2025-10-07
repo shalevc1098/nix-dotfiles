@@ -12,7 +12,7 @@
     ];
     
     bind = [
-      "Super, V, exec, pgrep wofi && pkill wofi || cliphist list | wofi --show dmenu --prompt 'Clipboard' | cliphist decode | wl-copy"
+      "Super, Super_L, exec, pgrep quickshell && noctalia-shell ipc call launcher toggle || (pgrep wofi && pkill wofi || wofi)"
       "Ctrl+Super, R, exec, pkill quickshell; sleep 0.2 && noctalia-shell &"
     ];
   };
