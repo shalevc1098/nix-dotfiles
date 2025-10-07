@@ -9,7 +9,7 @@ let
 in
 {
   home.packages = [
-    # matugen-git
+    matugen-git
   ];
 
   home.file.".local/bin/wal" = {
@@ -18,7 +18,7 @@ in
       set -eu
 
       wallpaper=$(${pkgs.coreutils}/bin/readlink -f "$1")
-      ${matugen-git}/bin/matugen image "''${wallpaper}" 1>/dev/null -t scheme-vibrant
+      ${matugen-git}/bin/matugen image "''${wallpaper}" 1>/dev/null -t scheme-tonal-spot
     '';
 
     executable = true;
@@ -35,7 +35,7 @@ in
 
     [templates.dankmaterialshell]
     input_path = "${./templates/dankmaterialshell/colors.json}"
-    output_path = "~/.config/dankmaterialshell/colors.json"
+    output_path = "~/.config/DankMaterialShell/colors.json"
 
     [templates.discord_midnight]
     input_path = "${./templates/discord/midnight.css}"
@@ -65,6 +65,10 @@ in
     [templates.hyprlock]
     input_path = "${./templates/hyprland/hyprlock.conf}"
     output_path = '~/.config/hypr/hyprlock.conf'
+
+    [templates.kitty]
+    input_path = "${./templates/kitty/colors.conf}"
+    output_path = "~/.config/kitty/colors.conf"
 
     [templates.noctalia]
     input_path = "${./templates/noctalia/colors.json}"
