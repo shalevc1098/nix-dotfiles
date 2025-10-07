@@ -48,8 +48,8 @@
     # '';
   };
 
-  wayland.windowManager.hyprland.settings.bind = [
-    "Super, T, exec, uwsm app -- foot"
-    "Super, Return, exec, uwsm app -- foot"
-  ];
+  # wayland.windowManager.hyprland.settings.bind = [
+  #   "Super, T, exec, uwsm app -- foot"
+  #   "Super, Return, exec, uwsm app -- foot"
+  # ];
 }
