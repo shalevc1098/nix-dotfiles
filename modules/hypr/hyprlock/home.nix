@@ -2,9 +2,10 @@
   config,
   inputs,
   pkgs,
+  lib,
   ...
 }:
-with config.wayland.windowManager.hyprland.settings;
+
 {
   programs.hyprlock = {
     enable = true;
