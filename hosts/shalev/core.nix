@@ -49,10 +49,10 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
   };
-  
+
   # Enable NVIDIA persistence daemon
   services.xserver.displayManager.setupCommands = ''
     ${pkgs.systemd}/bin/systemctl restart nvidia-persistenced
@@ -95,6 +95,10 @@
     variant = "";
   };
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shalev = {
     isNormalUser = true;
@@ -106,6 +110,7 @@
       "audio"
       "input"
       "i2c"
+      "docker"
     ];
     openssh.authorizedKeys.keys = [
       (builtins.readFile (
@@ -175,7 +180,7 @@
 
   # services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm = {
-    enable = true;
+    enable = false;
     package = pkgs.kdePackages.sddm;
     extraPackages = with pkgs; [
       sddm-astronaut
