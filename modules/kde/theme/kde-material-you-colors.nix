@@ -6,7 +6,6 @@ in
 {
   home.packages = [
     packages.kde-material-you-colors
-    pkgs.kdePackages.kde-cli-tools  # Provides kwriteconfig6
   ];
 
   # Configure to use file-based wallpaper detection instead of Plasma DBus

@@ -24,18 +24,18 @@
   ];
   boot.initrd.kernelModules = [ ];
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelParams = [ 
+  boot.kernelParams = [
     "acpi_enforce_resources=lax"
     # AMD/NVIDIA suspend fixes
     "amd_iommu=on"
     "iommu=pt"
-    "pcie_aspm=off"  # Fix for AMD suspend issues
-    "mem_sleep_default=deep"  # Enable deep sleep
-    "processor.max_cstate=1"  # Limit C-states to prevent issues
+    "pcie_aspm=off" # Fix for AMD suspend issues
+    "mem_sleep_default=deep" # Enable deep sleep
+    "processor.max_cstate=1" # Limit C-states to prevent issues
     # NVIDIA specific
     "nvidia-drm.modeset=1"
     "nvidia-drm.fbdev=1"
-    "ibt=off"  # Disable Intel Indirect Branch Tracking (can cause issues with NVIDIA)
+    "ibt=off" # Disable Intel Indirect Branch Tracking (can cause issues with NVIDIA)
   ];
   boot.kernelModules = [
     "kvm-amd"
@@ -94,6 +94,18 @@
       "noatime"
       "x-gvfs-show"
       "x-gvfs-name=Arch"
+    ];
+  };
+
+  fileSystems."/mnt/T7Shield" = {
+    device = "/dev/disk/by-uuid/68E8976DE8973870";
+    fsType = "ntfs-3g";
+    options = [
+      "defaults"
+      "windows_names"
+      "locale=en_US.utf8"
+      "x-gvfs-show"
+      "x-gvfs-name=T7 Shield"
     ];
   };
 

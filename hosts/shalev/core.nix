@@ -174,6 +174,7 @@
     nixfmt-rfc-style
     glib
     jq
+    net-tools
   ];
 
   programs.nix-ld.enable = true;

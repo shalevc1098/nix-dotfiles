@@ -2,9 +2,9 @@
 {
   xdg = {
     enable = true;
-    mimeApps = {
-      enable = true;
-    };
+    # mimeApps = {
+    #   enable = true;
+    # };
     portal = {
       enable = lib.mkForce true;
       extraPortals = with pkgs; [

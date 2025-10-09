@@ -1,8 +1,8 @@
 {
-  homeModule = {
+  homeModule = { };
+  nixosModule = {
     imports = [
-      ./shoko/home.nix
+      ./firewall/nixos.nix
     ];
   };
-  nixosModule = { };
 }

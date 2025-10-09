@@ -14,16 +14,16 @@
     );
   };
 
-  xdg.mimeApps = {
-    associations = {
-      added = {
-        "x-scheme-handler/vscode" = [ "code-url-handler.desktop" ];
-      };
-    };
-    defaultApplications = {
-      "x-scheme-handler/vscode" = [ "code-url-handler.desktop" ];
-    };
-  };
+  # xdg.mimeApps = {
+  #   associations = {
+  #     added = {
+  #       "x-scheme-handler/vscode" = [ "code-url-handler.desktop" ];
+  #     };
+  #   };
+  #   defaultApplications = {
+  #     "x-scheme-handler/vscode" = [ "code-url-handler.desktop" ];
+  #   };
+  # };
 
   wayland.windowManager.hyprland.settings = {
     bind = [
