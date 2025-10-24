@@ -41,6 +41,7 @@
     "kvm-amd"
     "coretemp"
     "it87"
+    "hidp"
   ];
   boot.extraModprobeConfig = ''
     options it87 force_id=0x8689,0x8883 ignore_resource_conflict=1
@@ -49,16 +50,20 @@
     options nvidia NVreg_TemporaryFilePath=/var/tmp
     options nvidia NVreg_EnableGpuFirmware=0
   '';
+  # Fixed the bluetooth connection refused - 0x0003 security block error I had with my DualSense controller
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModulePackages = with config.boot.kernelPackages; [
     it87
   ];
-  boot.kernelPatches = lib.singleton {
-    name = "disable-it87";
-    patch = null;
-    structuredExtraConfig = with lib.kernel; {
-      SENSORS_IT87 = no;
-    };
-  };
+  boot.kernelPatches = [
+    {
+      name = "disable-it87";
+      patch = null;
+      structuredExtraConfig = with lib.kernel; {
+        SENSORS_IT87 = no;
+      };
+    }
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/2d6ec19f-a111-4b30-992b-d9df674ea3a2";
@@ -123,4 +128,7 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.firmware = with pkgs; [
+    linux-firmware
+  ];
 }

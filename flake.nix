@@ -55,9 +55,14 @@
     };
 
     dankmaterialshell = {
-      url = "github:AvengeMedia/DankMaterialShell";
+    url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # dankmaterialshell = {
+    # url = "github:AvengeMedia/DankMaterialShell/d6be050";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
@@ -69,6 +74,16 @@
     apple-emoji-linux = {
       url = "github:samuelngs/apple-emoji-linux";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    wayland-pipewire-idle-inhibit = {
+      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
+    };
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 

@@ -8,8 +8,8 @@ stdenv.mkDerivation {
   dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/share/fonts
-    cp -r . $out/share/fonts
+    mkdir -p $out/share/fonts/opentype
+    cp -r . $out/share/fonts/opentype
   '';
 
   meta = with lib; {

@@ -10,6 +10,8 @@ in
 {
   home.packages = [
     matugen-git
+    pkgs.fatrace
+    pkgs.zenity
   ];
 
   home.file.".local/bin/wal" = {
@@ -17,8 +19,21 @@ in
       #!/bin/sh
       set -eu
 
+      if [ $# -eq 0 ]; then
+        selected=$(${pkgs.zenity}/bin/zenity --file-selection --title="Select Wallpaper" --file-filter="Images | *.png *.jpg *.jpeg *.webp *.bmp *.gif" --file-filter="All Files | *")
+        if [ -n "''${selected}" ]; then
+          exec "$0" "''${selected}"
+        else
+          exit 1
+        fi
+      fi
+
       wallpaper=$(${pkgs.coreutils}/bin/readlink -f "$1")
       ${matugen-git}/bin/matugen image "''${wallpaper}" 1>/dev/null -t scheme-tonal-spot
+
+      if command -v kde-material-you-colors >/dev/null 2>&1; then
+        kde-material-you-colors >/dev/null 2>&1 &
+      fi
     '';
 
     executable = true;
@@ -43,11 +58,11 @@ in
 
     [templates.gtk3]
     input_path = "${./templates/gtk/colors.css}"
-    output_path = "~/.config/gtk-3.0/gtk.css"
+    output_path = "~/.config/gtk-3.0/colors.css"
 
     [templates.gtk4]
     input_path = "${./templates/gtk/colors.css}"
-    output_path = "~/.config/gtk-4.0/gtk.css"
+    output_path = "~/.config/gtk-4.0/colors.css"
 
     [templates.fish]
     input_path = "${./templates/fish/colors.fish}"
@@ -56,6 +71,10 @@ in
     [templates.foot]
     input_path = "${./templates/foot/colors.ini}"
     output_path = "~/.config/foot/colors.ini"
+
+    [templates.fuzzel]
+    input_path = "${./templates/fuzzel/fuzzel_theme.ini}"
+    output_path = "~/.config/fuzzel/fuzzel_theme.ini"
 
     [templates.hyprland]
     input_path = '${./templates/hyprland/colors.conf}'
@@ -91,7 +110,13 @@ in
     output_path = "~/.config/waybar/colors.css"
   '';
 
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "exec-once = sleep 0.5; wal \"$(cat ~/.local/state/wallpaper.txt || ~/Pictures/Wallpapers/wallpaper.png)\""
-  ];
+  wayland.windowManager.hyprland.settings = {
+    bind = [
+      "Ctrl+Super, T, exec, ~/.local/bin/wal"
+    ];
+
+    exec-once = [
+      "exec-once = sleep 0.5; wal \"$(cat ~/.local/state/wallpaper.txt || ~/Pictures/Wallpapers/wallpaper.png)\""
+    ];
+  };
 }

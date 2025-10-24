@@ -4,8 +4,10 @@ let
   packages = import ../../packages/kde-material-you-colors.nix { inherit pkgs; };
 in
 {
-  home.packages = [
+  home.packages = with pkgs; [
     packages.kde-material-you-colors
+    kdePackages.kconfig
+    kdePackages.plasma-workspace
   ];
 
   # Configure to use file-based wallpaper detection instead of Plasma DBus

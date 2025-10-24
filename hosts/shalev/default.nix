@@ -10,16 +10,20 @@ let
     # Packages
     # ../../modules/ags
     ../../modules/anime
+    ../../modules/bluetooth
+    ../../modules/bottles
     ../../modules/cliphist
     ../../modules/dankmaterialshell
+    ../../modules/desktops
     ../../modules/dev-tools
     # ../../modules/dunst
     ../../modules/hypr
     ../../modules/fan-control
     # ../../modules/fcitx5
+    # ../../modules/filebot
     ../../modules/fish
     ../../modules/firefox
-    ../../modules/foot
+    # ../../modules/foot
     # ../../modules/fuzzel
     ../../modules/gnome
     ../../modules/greetd
@@ -28,12 +32,17 @@ let
     ../../modules/matugen
     ../../modules/mpv
     # ../../modules/noctalia
+    ../../modules/lyx
     ../../modules/obs-studio
+    ../../modules/openrgb
+    ../../modules/polkit
+    ../../modules/qbittorrent
     # ../../modules/quickshell
     ../../modules/screenshot
     ../../modules/spotify
     ../../modules/ssh
     ../../modules/starship
+    # ../../modules/swayosd
     ../../modules/swww
     ../../modules/vencord
     # ../../modules/waybar

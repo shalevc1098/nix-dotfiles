@@ -1,7 +1,16 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.gnome-keyring ];
+  home.packages = with pkgs; [
+    libsecret
+    seahorse
+  ];
+
+  services.gnome-keyring = {
+    enable = true;
+    components = [ "ssh" ];
+  };
+
   home.sessionVariables = {
-    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gnome-keyring/ssh";
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gcr/ssh";
   };
 }

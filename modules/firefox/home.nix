@@ -18,6 +18,17 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
         };
       };
+      Preferences = {
+        "gfx.webrender.all" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "layers.acceleration.force-enabled" = true;
+      };
     };
+    package = pkgs.firefox.overrideAttrs (old: {
+      postFixup = (old.postFixup or "") + ''
+        # Create a wrapper script that sets the environment variable
+        wrapProgram $out/bin/firefox --set GTK_USE_PORTAL 1
+      '';
+    });
   };
 }

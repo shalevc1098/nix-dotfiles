@@ -6,14 +6,16 @@
 {
   imports = [
     inputs.dankmaterialshell.homeModules.dankMaterialShell.default
-    # inputs.niri.homeModules.niri
   ];
 
   programs.dankMaterialShell = {
     enable = true;
     enableDynamicTheming = false;
     quickshell = {
-      package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [pkgs.kdePackages.kirigami];
+      package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
+        pkgs.kdePackages.kirigami
+        pkgs.kdePackages.qtmultimedia
+      ];
     };
   };
 

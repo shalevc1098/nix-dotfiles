@@ -9,7 +9,11 @@ in
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = git-config.userName;
-    userEmail = git-config.userEmail;
+    settings = {
+      user = {
+        name = git-config.user.name;
+        email = git-config.user.email;
+      };
+    };
   };
 }

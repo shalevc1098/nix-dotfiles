@@ -50,4 +50,14 @@
     "Super, T, exec, uwsm app -- kitty"
     "Super, Return, exec, uwsm app -- kitty"
   ];
+
+  xdg.desktopEntries.kitty-vim = {
+    name = "Vim (Kitty)";
+    exec = "kitty -e vim %F";
+    icon = "vim";
+    terminal = false;
+    type = "Application";
+    categories = [ "Utility" "TextEditor" ];
+    mimeType = [ "text/plain" ];
+  };
 }

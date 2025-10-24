@@ -2,7 +2,7 @@
   homeModule = {
     imports = [
       ./hyprland/home.nix
-      ./hyprpolkitagent/home.nix
+      # ./hyprpolkitagent/home.nix
       ./hypridle/home.nix
       ./hyprlock/home.nix
       # ./hyprpaper/home.nix

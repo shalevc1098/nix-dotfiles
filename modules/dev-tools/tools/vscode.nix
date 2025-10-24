@@ -10,6 +10,7 @@
         ps.libsecret
         ps.gnome-keyring
         ps.dbus
+        ps.dotnet-sdk
       ]
     );
   };

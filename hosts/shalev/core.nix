@@ -4,7 +4,6 @@
 
 {
   config,
-  inputs,
   pkgs,
   ...
 }:
@@ -64,13 +63,6 @@
   # Enable colord for color profile management
   services.colord.enable = true;
 
-  # Enable Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-  services.blueman.enable = true;
-
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 
@@ -111,6 +103,7 @@
       "input"
       "i2c"
       "docker"
+      "lp"
     ];
     openssh.authorizedKeys.keys = [
       (builtins.readFile (
@@ -130,17 +123,21 @@
     };
   };
 
-  security.sudo.extraRules = [
-    {
-      users = [ "shalev" ];
-      commands = [
+  security = {
+    sudo = {
+      extraRules = [
         {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
+          users = [ "shalev" ];
+          commands = [
+            {
+              command = "ALL";
+              options = [ "NOPASSWD" ];
+            }
+          ];
         }
       ];
-    }
-  ];
+    };
+  };
 
   nix.settings = {
     experimental-features = [
@@ -175,9 +172,13 @@
     glib
     jq
     net-tools
+    zenity
+    dualsensectl
+    chntpw
   ];
 
   programs.nix-ld.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   # services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm = {

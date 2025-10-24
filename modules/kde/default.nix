@@ -1,8 +1,10 @@
 {
   homeModule = {
     imports = [
-      ./kdeconnect/home.nix
-      ./polkit/home.nix
+      ./dolphin/home.nix
+      ./kate/home.nix
+      # ./kdeconnect/home.nix
+      # ./polkit/home.nix
       ./theme/kde-material-you-colors.nix
     ];
   };

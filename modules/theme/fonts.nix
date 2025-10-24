@@ -26,6 +26,7 @@
       # noto-fonts-emoji  # Replaced with Apple Color Emoji
       noto-fonts-extra
       source-code-pro
+      corefonts
       # monaco (available via NUR)
       # ttf-ms-win11-auto (not in main nixpkgs)
       

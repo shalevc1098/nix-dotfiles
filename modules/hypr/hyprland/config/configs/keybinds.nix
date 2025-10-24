@@ -76,8 +76,8 @@
   bindl = [
     "Alt, XF86AudioMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
     "Super, XF86AudioMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
-    ", XF86AudioMute, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%"
-    "Super+Shift, M, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%"
+    ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    "Super+Shift, M, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     
     # Media playback controls
     ", XF86AudioPlay, exec, playerctl play-pause"
