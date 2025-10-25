@@ -38,6 +38,7 @@ let
     ../../modules/openrgb
     ../../modules/polkit
     ../../modules/qbittorrent
+    ../../modules/qemu
     # ../../modules/quickshell
     ../../modules/screenshot
     ../../modules/spotify
