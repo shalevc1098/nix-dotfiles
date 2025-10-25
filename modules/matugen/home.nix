@@ -15,8 +15,9 @@ in
   ];
 
   home.file.".local/bin/wal" = {
+    executable = true;
     text = ''
-      #!/bin/sh
+      #!/usr/bin/env bash
       set -eu
 
       if [ $# -eq 0 ]; then
@@ -35,8 +36,6 @@ in
         kde-material-you-colors >/dev/null 2>&1 &
       fi
     '';
-
-    executable = true;
   };
 
   xdg.configFile."matugen/config.toml".text = ''
