@@ -16,9 +16,7 @@
     "float, class:^(nm-connection-editor)$"
     "size 45%, class:^(nm-connection-editor)$"
     "center, class:^(nm-connection-editor)$"
-    "float, class:^(org.qbittorrent.qBittorrent)$"
     "float, class:^(heroic)$"
-    "float, class:^(zoom)$"
 
     # Tiling
     "tile, class:^dev\\.warp\\.Warp$"
