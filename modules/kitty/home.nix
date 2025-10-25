@@ -23,9 +23,13 @@
       # Use fish shell
       shell = "fish";
 
+      # Remote control
+      allow_remote_control = "yes";
+
       # Copy & Paste
       "map ctrl+c" = "copy_or_interrupt";
       "map ctrl+v" = "paste_from_clipboard";
+      "map alt+v" = "launch --type=background --allow-remote-control --keep-focus ~/.local/bin/clip2path";
 
       # Search
       "map ctrl+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
@@ -57,7 +61,40 @@
     icon = "vim";
     terminal = false;
     type = "Application";
-    categories = [ "Utility" "TextEditor" ];
+    categories = [
+      "Utility"
+      "TextEditor"
+    ];
     mimeType = [ "text/plain" ];
+  };
+
+  home.file.".local/bin/clip2path" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+      set -e
+
+      if [ -n "$WAYLAND_DISPLAY" ]; then
+          types=$(wl-paste --list-types)
+          if grep -q '^image/' <<<"$types"; then
+              ext=$(grep -m1 '^image/' <<<"$types" | cut -d/ -f2 | cut -d';' -f1)
+              file="/tmp/clip_$(date +%s).''${ext}"
+              wl-paste > "$file"
+              printf '%q' "$file" | kitty @ send-text --stdin
+          else
+              wl-paste --no-newline | kitty @ send-text --stdin
+          fi
+      elif [ -n "$DISPLAY" ]; then
+          types=$(xclip -selection clipboard -t TARGETS -o)
+          if grep -q '^image/' <<<"$types"; then
+              ext=$(grep -m1 '^image/' <<<"$types" | cut -d/ -f2 | cut -d';' -f1)
+              file="/tmp/clip_$(date +%s).''${ext}"
+              xclip -selection clipboard -t "image/''${ext}" -o > "$file"
+              printf '%q' "$file" | kitty @ send-text --stdin
+          else
+              xclip -selection clipboard -o | kitty @ send-text --stdin
+          fi
+      fi
+    '';
   };
 }
