@@ -38,7 +38,6 @@ let
     ../../modules/openrgb
     ../../modules/polkit
     ../../modules/qbittorrent
-    ../../modules/qemu
     # ../../modules/quickshell
     ../../modules/screenshot
     ../../modules/spotify
@@ -47,6 +46,7 @@ let
     # ../../modules/swayosd
     ../../modules/swww
     ../../modules/vencord
+    ../../modules/virtualization
     # ../../modules/waybar
     ../../modules/wlogout
     ../../modules/wlsunset
