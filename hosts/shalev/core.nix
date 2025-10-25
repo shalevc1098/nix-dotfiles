@@ -87,11 +87,7 @@
     variant = "";
   };
 
-  virtualisation.docker = {
-    enable = true;
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with 'passwd'.
   users.users.shalev = {
     isNormalUser = true;
     description = "shalev";
@@ -102,7 +98,6 @@
       "audio"
       "input"
       "i2c"
-      "docker"
       "lp"
     ];
     openssh.authorizedKeys.keys = [

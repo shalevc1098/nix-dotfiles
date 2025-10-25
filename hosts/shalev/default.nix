@@ -16,6 +16,7 @@ let
     ../../modules/dankmaterialshell
     ../../modules/desktops
     ../../modules/dev-tools
+    ../../modules/docker
     # ../../modules/dunst
     ../../modules/hypr
     ../../modules/fan-control
@@ -67,7 +68,10 @@ in
 
 lib.nixosSystem {
   system = "x86_64-linux";
-  specialArgs = { inherit inputs; };
+  specialArgs = {
+    inherit inputs;
+    username = "shalev";
+  };
   modules = [
     # System
     ./core.nix
