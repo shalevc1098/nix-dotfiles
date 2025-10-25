@@ -1,9 +1,10 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
-    quickemu
+  environment.systemPackages = [
+    inputs.quickemu.packages.${pkgs.system}.default
   ];
 }
