@@ -53,6 +53,7 @@ let
     ../../modules/wofi
     ../../modules/xdg
     ../../modules/xiccd
+    ../../modules/zoom
     # ../../modules/zsh
 
     # Theme
