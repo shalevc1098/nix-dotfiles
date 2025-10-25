@@ -85,6 +85,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    quickemu.url = "github:quickemu-project/quickemu";
   };
 
   #   outputs =
