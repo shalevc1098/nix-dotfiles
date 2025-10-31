@@ -2,12 +2,15 @@
 
 let
   packages = import ../../packages/kde-material-you-colors.nix { inherit pkgs; };
+  papirus-colors = import ../../packages/papirus-colors.nix { inherit pkgs; };
 in
 {
   home.packages = with pkgs; [
     packages.kde-material-you-colors
     kdePackages.kconfig
     kdePackages.plasma-workspace
+    papirus-icon-theme
+    papirus-colors
   ];
 
   # Configure to use file-based wallpaper detection instead of Plasma DBus
@@ -45,11 +48,11 @@ in
 
     # Light scheme icons theme
     #iconslight = OneUI-light
-    iconslight = breeze-plus
+    iconslight = Papirus-Colors
 
     # Dark scheme icons theme
     #iconsdark = OneUI-dark
-    iconsdark = breeze-plus-dark
+    iconsdark = Papirus-Colors-Dark
 
     # Use pywal to theme other programs using Material You colors
     pywal = False
