@@ -28,6 +28,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  security.rtkit.enable = true;
+
   # Enable sound
   services.pipewire = {
     enable = true;
