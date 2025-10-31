@@ -24,7 +24,7 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       # noto-fonts-emoji  # Replaced with Apple Color Emoji
-      noto-fonts-extra
+      noto-fonts
       source-code-pro
       corefonts
       # monaco (available via NUR)
