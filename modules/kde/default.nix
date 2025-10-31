@@ -5,6 +5,7 @@
       ./kate/home.nix
       # ./kdeconnect/home.nix
       # ./polkit/home.nix
+      ./theme/home.nix
       ./theme/kde-material-you-colors.nix
     ];
   };
