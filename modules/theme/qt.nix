@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     kdePackages.plasma-integration
     kdePackages.plasma-integration.qt5
+    kdePackages.breeze
     libsForQt5.qtstyleplugin-kvantum
     qt6.qtdeclarative
     libsForQt5.qt5ct
@@ -19,6 +20,7 @@
   qt = {
     enable = true;
     platformTheme.name = "kde";
+    style.name = "breeze";
   };
 
   home.sessionVariables = {
