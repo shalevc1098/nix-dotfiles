@@ -2,7 +2,6 @@
 {
   imports = [ inputs.plasma-manager.homeModules.plasma-manager ];
 
-  # Set Kitty as the default terminal for Dolphin
   programs.plasma = {
     enable = true;
     configFile = {
