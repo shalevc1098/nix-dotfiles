@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./tools/c.nix
     ./tools/dotnet.nix
     ./tools/git.nix
     ./tools/node.nix
