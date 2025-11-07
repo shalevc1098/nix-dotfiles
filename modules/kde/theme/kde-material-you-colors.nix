@@ -9,7 +9,7 @@ in
     packages.kde-material-you-colors
     kdePackages.kconfig
     kdePackages.plasma-workspace
-    papirus-icon-theme
+    # papirus-icon-theme
     papirus-colors
   ];
 
@@ -47,12 +47,12 @@ in
     ncolor = 0
 
     # Light scheme icons theme
-    #iconslight = OneUI-light
-    iconslight = Papirus-Colors
+    #iconslight = Papirus-Colors
+    iconslight = breeze-plus
 
     # Dark scheme icons theme
-    #iconsdark = OneUI-dark
-    iconsdark = Papirus-Colors-Dark
+    #iconsdark = Papirus-Colors-Dark
+    iconsdark = breeze-plus-dark
 
     # Use pywal to theme other programs using Material You colors
     pywal = False
