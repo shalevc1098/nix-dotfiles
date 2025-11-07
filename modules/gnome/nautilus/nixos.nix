@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  # TODO: split
-  services.gvfs.enable = true;
-
   environment.systemPackages = with pkgs; [
     nautilus
   ];

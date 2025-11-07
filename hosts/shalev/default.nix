@@ -28,6 +28,7 @@ let
     # ../../modules/fuzzel
     ../../modules/gnome
     ../../modules/greetd
+    ../../modules/gvfs
     ../../modules/kde
     ../../modules/kitty
     ../../modules/matugen
