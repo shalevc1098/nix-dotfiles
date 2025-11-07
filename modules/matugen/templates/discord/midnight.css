@@ -20,13 +20,13 @@
 	--corner-text: 'Midnight';
 
 	/* color of status indicators and window controls */
-  --online-indicator: {{colors.inverse_primary.default.hex}};     /* change to #23a55a for default green */
+  	--online-indicator: {{colors.inverse_primary.default.hex}};     /* change to #23a55a for default green */
 	--dnd-indicator: {{colors.error.default.hex}};                  /* change to #f13f43 for default red */
 	--idle-indicator: {{colors.tertiary_container.default.hex}};    /* change to #f0b232 for default yellow */
 	--streaming-indicator: {{colors.on_primary.default.hex}};       /* change to #593695 for default purple */
 
 	/* accent colors */
-  --accent-1: {{colors.tertiary.default.hex}};            /* links */
+  	--accent-1: {{colors.tertiary.default.hex}};            /* links */
 	--accent-2: {{colors.primary.default.hex}};             /* general unread/mention elements, some icons when active */
 	--accent-3: {{colors.primary.default.hex}};             /* accent buttons */
 	--accent-4: {{colors.surface_bright.default.hex}};      /* accent buttons when hovered */
@@ -43,7 +43,7 @@
 	--text-5: {{colors.outline.default.hex}};               /* muted channels/chats and timestamps */
 
 	/* background and dark colors */
-  --bg-1: {{colors.primary.default.hex}};                             /* dark buttons when clicked */
+  	--bg-1: {{colors.primary.default.hex}};                             /* dark buttons when clicked */
 	--bg-2: {{colors.surface_container_high.default.hex}};              /* dark buttons */
 	--bg-3: {{colors.surface_container_low.default.hex}};               /* spacing, secondary elements */
 	--bg-4: {{colors.surface.default.hex}};                             /* main background color */
@@ -85,7 +85,7 @@
 
 body {
     /* font options */
-    --font: 'SF Pro Display'; /* change to '' for default discord font */
+    --font: 'SF Hebrew', 'SF Pro Display'; /* change to '' for default discord font */
     --code-font: 'SF Mono'; /* change to '' for default discord font */
     font-weight: 400; /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
 }
@@ -103,10 +103,17 @@ body {
 }
 
 /* Force font everywhere - Linux/Vesktop fix */
-* {
+/* * {
   font-family: 'SF Pro Display', var(--font), var(--font-primary), 'gg sans', sans-serif !important;
 }
 
 code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
   font-family: 'SF Mono', var(--code-font), 'Consolas', 'Monaco', monospace !important;
+} */
+
+@container root style(--colors: on) {
+  .visual-refresh body,
+  .visual-refresh .theme-dark:not(.custom-user-profile-theme) {
+      --white-500: var(--text-1);
+  }
 }
