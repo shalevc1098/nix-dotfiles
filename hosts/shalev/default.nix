@@ -10,6 +10,7 @@ let
     # Packages
     # ../../modules/ags
     ../../modules/anime
+    ../../modules/anydesk
     ../../modules/bluetooth
     ../../modules/bottles
     ../../modules/cliphist
@@ -22,6 +23,7 @@ let
     ../../modules/fan-control
     # ../../modules/fcitx5
     # ../../modules/filebot
+    ../../modules/filezilla
     ../../modules/fish
     ../../modules/firefox
     # ../../modules/foot
@@ -41,7 +43,7 @@ let
     ../../modules/qbittorrent
     # ../../modules/quickshell
     ../../modules/screenshot
-    ../../modules/spotify
+    ../../modules/spicetify
     ../../modules/ssh
     ../../modules/starship
     # ../../modules/swayosd
@@ -95,5 +97,6 @@ lib.nixosSystem {
         home.stateVersion = "25.05";
       };
     }
-  ] ++ nixosModules;
+  ]
+  ++ nixosModules;
 }
