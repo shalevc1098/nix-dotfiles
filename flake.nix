@@ -14,25 +14,19 @@
 
     astal.url = "github:aylur/astal";
 
-    # hyprland = {
-    #   url = "github:hyprwm/Hyprland";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
-    # };
-
-    # hyprlock = {
-    #   url = "github:hyprwm/hyprlock";
-    #   inputs = {
-    #     hyprgraphics.follows = "hyprland/hyprgraphics";
-    #     hyprlang.follows = "hyprland/hyprlang";
-    #     hyprutils.follows = "hyprland/hyprutils";
-    #     nixpkgs.follows = "hyprland/nixpkgs";
-    #     systems.follows = "hyprland/systems";
-    #   };
     # };
 
     matugen.url = "github:InioX/matugen";
@@ -87,6 +81,8 @@
     };
 
     quickemu.url = "github:quickemu-project/quickemu";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   #   outputs =
