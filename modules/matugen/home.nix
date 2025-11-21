@@ -119,7 +119,7 @@ in
     ];
 
     exec-once = [
-      "exec-once = sleep 0.5; wal \"$(cat ~/.local/state/wallpaper.txt || ~/Pictures/Wallpapers/wallpaper.png)\""
+      "exec-once = sleep 0.5; wal \"$(cat ~/.local/state/wallpaper.txt || ${./wallpaper.png})\""
     ];
   };
 }
