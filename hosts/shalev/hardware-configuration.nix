@@ -26,29 +26,23 @@
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelParams = [
     "acpi_enforce_resources=lax"
-    # AMD/NVIDIA suspend fixes
-    "amd_iommu=on"
-    "iommu=pt"
-    "pcie_aspm=off" # Fix for AMD suspend issues
-    "mem_sleep_default=deep" # Enable deep sleep
-    "processor.max_cstate=1" # Limit C-states to prevent issues
-    # NVIDIA specific
+    "mem_sleep_default=deep"
     "nvidia-drm.modeset=1"
     "nvidia-drm.fbdev=1"
-    "ibt=off" # Disable Intel Indirect Branch Tracking (can cause issues with NVIDIA)
+    "iommu=pt"
   ];
   boot.kernelModules = [
     "kvm-amd"
     "coretemp"
     "it87"
-    "hidp"
   ];
   boot.extraModprobeConfig = ''
-    options it87 force_id=0x8689,0x8883 ignore_resource_conflict=1
-    # NVIDIA suspend/resume fixes
+    options it87 ignore_resource_conflict=1
+
+    # Fix NVIDIA Sleep/Wake (You need these for mem_sleep_default=deep!)
     options nvidia NVreg_PreserveVideoMemoryAllocations=1
     options nvidia NVreg_TemporaryFilePath=/var/tmp
-    options nvidia NVreg_EnableGpuFirmware=0
+    options nvidia NVreg_EnableGpuFirmware=0 
   '';
   # Fixed the bluetooth connection refused - 0x0003 security block error I had with my DualSense controller
   boot.kernelPackages = pkgs.linuxPackages_latest;
