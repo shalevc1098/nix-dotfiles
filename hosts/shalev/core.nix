@@ -54,11 +54,6 @@
     nvidiaSettings = true;
   };
 
-  # Enable NVIDIA persistence daemon
-  services.xserver.displayManager.setupCommands = ''
-    ${pkgs.systemd}/bin/systemctl restart nvidia-persistenced
-  '';
-
   # Enable i2c
   hardware.i2c.enable = true;
 
