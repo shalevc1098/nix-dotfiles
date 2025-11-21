@@ -100,6 +100,10 @@ in
     input_path = "${./templates/quickshell/colors.json}"
     output_path = "~/.local/quickshell/colors.json"
 
+    [templates.spicetify]
+    input_path = "${./templates/spicetify/color.ini}"
+    output_path = '~/.config/spicetify/Themes/MaterialYou/color.ini'
+
     [templates.wallpaper]
     input_path = "${./templates/wallpaper.txt}"
     output_path = "~/.local/state/wallpaper.txt"
