@@ -8,9 +8,9 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      "float, class:org.gnome.gThumb"
-      "size 60% 65%, class:org.gnome.gThumb"
+    windowrule = [
+      "match:class org.gnome.gThumb, float on"
+      "match:class org.gnome.gThumb, size (monitor_w*0.6) (monitor_h*0.65)"
     ];
   };
 }

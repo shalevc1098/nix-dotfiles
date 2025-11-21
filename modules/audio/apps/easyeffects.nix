@@ -14,9 +14,9 @@
   ];
 
   # Window rule for EasyEffects
-  wayland.windowManager.hyprland.settings.windowrulev2 = [
-    "float, class:^(com.github.wwmm.easyeffects)$"
-    "size 60% 70%, class:^(com.github.wwmm.easyeffects)$"
-    "center, class:^(com.github.wwmm.easyeffects)$"
+  wayland.windowManager.hyprland.settings.windowrule = [
+    "match:class ^(com.github.wwmm.easyeffects)$, float on"
+    "match:class ^(com.github.wwmm.easyeffects)$, size (monitor_w*0.6) (monitor_h*0.7)"
+    "match:class ^(com.github.wwmm.easyeffects)$, center on"
   ];
 }

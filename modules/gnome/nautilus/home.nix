@@ -4,12 +4,12 @@
     #   "$mainMod, E, exec, uwsm app -- nautilus --new-window"
     # ];
 
-    windowrulev2 = [
-      # "float, class:org.gnome.Nautilus, title:^(Save As)(.*)$"
-      # "size 60% 65%, class:org.gnome.Nautilus, title:^(Save As)(.*)$"
+    windowrule = [
+      # "match:class org.gnome.Nautilus, match:title ^(Save As)(.*)$, float on"
+      # "match:class org.gnome.Nautilus, match:title ^(Save As)(.*)$, size (monitor_w*0.6) (monitor_h*0.65)"
 
-      "float, class:org.gnome.Nautilus, title:^(?!Loading\\.\\.\\.$).*"
-      "size 60% 65%, class:org.gnome.Nautilus, title:^(?!Loading\\.\\.\\.$).*"
+      "match:class org.gnome.Nautilus, match:title ^(?!Loading\\.\\.\\.\\.).*, float on"
+      "match:class org.gnome.Nautilus, match:title ^(?!Loading\\.\\.\\.\\.).*, size (monitor_w*0.6) (monitor_h*0.65)"
     ];
   };
 }

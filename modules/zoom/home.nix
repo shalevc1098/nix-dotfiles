@@ -10,8 +10,8 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      "float, class:^(zoom)$"
+    windowrule = [
+      "match:class ^(zoom)$, float on"
     ];
   };
 }

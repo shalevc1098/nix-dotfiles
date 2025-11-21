@@ -81,7 +81,7 @@
 
   wayland.windowManager.hyprland.settings = {
     layerrule = [
-      "blur, logout_dialog"
+      "match:namespace logout_dialog, blur on"
     ];
   };
 }

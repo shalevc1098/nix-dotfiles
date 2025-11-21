@@ -5,9 +5,9 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      "float, class:org.kde.gwenview"
-      "size 60% 65%, class:org.kde.gwenview"
+    windowrule = [
+      "match:class org.kde.gwenview, float on"
+      "match:class org.kde.gwenview, size (monitor_w*0.6) (monitor_h*0.65)"
     ];
   };
 }

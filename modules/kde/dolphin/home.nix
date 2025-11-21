@@ -22,9 +22,9 @@
       "$mainMod, E, exec, uwsm app -- dolphin --new-window"
     ];
 
-    windowrulev2 = [
-      "float, class:org.freedesktop.impl.portal.desktop.kde"
-      "size 60% 65%, class:org.freedesktop.impl.portal.desktop.kde"
+    windowrule = [
+      "match:class org.freedesktop.impl.portal.desktop.kde, float on"
+      "match:class org.freedesktop.impl.portal.desktop.kde, size (monitor_w*0.6) (monitor_h*0.65) "
     ];
   };
 }
