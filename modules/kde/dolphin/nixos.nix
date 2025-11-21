@@ -5,6 +5,7 @@
 {
   environment.systemPackages = with pkgs; [
     kdePackages.dolphin
+    kdePackages.ffmpegthumbs
   ];
 
   # Fix Dolphin's "Open with" menu not opening at all
