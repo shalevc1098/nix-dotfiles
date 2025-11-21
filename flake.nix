@@ -83,6 +83,8 @@
     quickemu.url = "github:quickemu-project/quickemu";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    nur.url = "github:nix-community/NUR";
   };
 
   #   outputs =

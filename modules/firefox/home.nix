@@ -32,5 +32,13 @@
         wrapProgram $out/bin/firefox --set GTK_USE_PORTAL 1
       '';
     });
+    profiles."pndugfhk.default" = {
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        bitwarden
+        darkreader
+        pywalfox
+        ublock-origin
+      ];
+    };
   };
 }
