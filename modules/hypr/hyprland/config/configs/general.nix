@@ -39,8 +39,8 @@
   };
 
   general = {
-    gaps_in = 4;
-    gaps_out = 5;
+    gaps_in = 7;
+    gaps_out = 7;
     gaps_workspaces = 50;
     border_size = 1;
 
@@ -79,11 +79,9 @@
 
     shadow = {
       enabled = true;
-      ignore_window = true;
-      range = 20;
-      offset = "0 2";
-      render_power = 4;
-      color = "rgba(0000002A)";
+      range = 12;
+      render_power = 3;
+      color = "rgba(000000aa)";
     };
 
     dim_inactive = false;
@@ -160,19 +158,5 @@
 
   cursor = {
     no_hardware_cursors = 0;
-  };
-
-  # Overview
-  plugin = {
-    hyprexpo = {
-      columns = 3;
-      gap_size = 5;
-      bg_col = "rgb(000000)";
-      workspace_method = "first 1";
-
-      enable_gesture = false;
-      gesture_distance = 300;
-      gesture_positive = false;
-    };
   };
 }
