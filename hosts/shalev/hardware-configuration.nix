@@ -74,10 +74,11 @@
   };
 
   fileSystems."/mnt/windows" = {
-    device = "/dev/disk/by-uuid/38442F8B442F4B48";
+    device = "/dev/disk/by-uuid/01DC5AF33D017250";
     fsType = "ntfs-3g";
     options = [
       "defaults"
+      "nofail"
       "windows_names"
       "locale=en_US.utf8"
       "x-gvfs-show"
@@ -90,6 +91,7 @@
     fsType = "ext4";
     options = [
       "defaults"
+      "nofail"
       "noatime"
       "x-gvfs-show"
       "x-gvfs-name=Arch"
@@ -101,6 +103,7 @@
     fsType = "ntfs-3g";
     options = [
       "defaults"
+      "nofail"
       "windows_names"
       "locale=en_US.utf8"
       "x-gvfs-show"
