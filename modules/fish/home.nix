@@ -24,4 +24,6 @@
       };
     };
   };
+
+  programs.man.generateCaches = false;
 }
