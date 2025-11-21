@@ -32,8 +32,8 @@
       "map alt+v" = "launch --type=background --allow-remote-control --keep-focus ~/.local/bin/clip2path";
 
       # Search
-      "map ctrl+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
-      "map kitty_mod+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
+      # "map ctrl+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
+      # "map kitty_mod+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
 
       # Scroll & Zoom
       "map page_up" = "scroll_page_up";
