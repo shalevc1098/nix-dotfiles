@@ -3,3 +3,6 @@ hosts/shalev/.ssh/
 
 CLAUDE.md
 GEMINI.md
+
+.claude
+.gemini
