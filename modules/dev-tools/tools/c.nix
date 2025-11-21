@@ -4,10 +4,28 @@
 }:
 {
   home.packages = with pkgs; [
-    gcc
-    gnumake
-    gdb
-    valgrind
+    autoconf
+    automake
+    bzip2
     clang-tools
+    cmake
+    gcc
+    gdb
+    gettext
+    gmp
+    gnumake
+    gnutls
+    libpng
+    libtool
+    libxml2.dev
+    m4
+    nasm
+    nettle
+    perl
+    pkg-config
+    texinfo
+    valgrind
+    xz
+    zlib
   ];
 }
