@@ -25,9 +25,11 @@
       efiSupport = true;
       useOSProber = true;
 
-      extraConfig = ''
-        terminal_output console
-      '';
+      splashImage = ./grub_wallpaper.jpg;
+
+      # extraConfig = ''
+      #   terminal_output console
+      # '';
     };
   };
 
