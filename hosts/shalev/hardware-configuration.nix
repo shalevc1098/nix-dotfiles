@@ -74,7 +74,7 @@
   };
 
   fileSystems."/mnt/windows" = {
-    device = "/dev/disk/by-uuid/01DC5AF33D017250";
+    device = "/dev/disk/by-uuid/01DC5BB7CE86B630";
     fsType = "ntfs-3g";
     options = [
       "defaults"
@@ -83,18 +83,6 @@
       "locale=en_US.utf8"
       "x-gvfs-show"
       "x-gvfs-name=Windows"
-    ];
-  };
-
-  fileSystems."/mnt/arch" = {
-    device = "/dev/disk/by-uuid/a68f15b0-0428-45fc-9e9d-67d74e5fd842";
-    fsType = "ext4";
-    options = [
-      "defaults"
-      "nofail"
-      "noatime"
-      "x-gvfs-show"
-      "x-gvfs-name=Arch"
     ];
   };
 
@@ -110,10 +98,6 @@
       "x-gvfs-name=T7 Shield"
     ];
   };
-
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/a7b09eb8-86da-45ef-9903-b46180f1703d"; }
-  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
