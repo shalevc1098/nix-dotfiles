@@ -13,8 +13,8 @@ in
 
   fonts.fontconfig.enable = lib.mkDefault true;
   home.packages = [
-    inputs.astal.packages.${pkgs.system}.io
-    inputs.astal.packages.${pkgs.system}.tray
+    inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.io
+    inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.tray
     pkgs.nerd-fonts.jetbrains-mono
     geistMono
     pkgs.libdbusmenu-gtk3
@@ -29,16 +29,16 @@ in
     configDir = null;
 
     extraPackages = with pkgs; [
-      inputs.astal.packages.${pkgs.system}.apps
-      inputs.astal.packages.${pkgs.system}.auth
-      inputs.astal.packages.${pkgs.system}.bluetooth
-      inputs.astal.packages.${pkgs.system}.cava
-      inputs.astal.packages.${pkgs.system}.hyprland
-      inputs.astal.packages.${pkgs.system}.mpris
-      inputs.astal.packages.${pkgs.system}.network
-      inputs.astal.packages.${pkgs.system}.notifd
-      inputs.astal.packages.${pkgs.system}.tray
-      inputs.astal.packages.${pkgs.system}.wireplumber # TODO: maybe remove
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.apps
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.auth
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.bluetooth
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.cava
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.mpris
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.network
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.notifd
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.tray
+      inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.wireplumber # TODO: maybe remove
     ];
   };
 

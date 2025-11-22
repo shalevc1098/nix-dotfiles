@@ -14,7 +14,7 @@
     with pkgs;
     [
       # Apple Color Emoji (at the top for priority)
-      inputs.apple-emoji-linux.packages.${pkgs.system}.default
+      inputs.apple-emoji-linux.packages.${pkgs.stdenv.hostPlatform.system}.default
       
       catppuccin-cursors
       culmus
@@ -31,14 +31,14 @@
       # ttf-ms-win11-auto (not in main nixpkgs)
       
       # Apple fonts (all languages)
-      inputs.apple-fonts.packages.${pkgs.system}.sf-pro
-      inputs.apple-fonts.packages.${pkgs.system}.sf-compact
-      inputs.apple-fonts.packages.${pkgs.system}.sf-mono
-      inputs.apple-fonts.packages.${pkgs.system}.sf-arabic
-      inputs.apple-fonts.packages.${pkgs.system}.sf-armenian
-      inputs.apple-fonts.packages.${pkgs.system}.sf-georgian
-      inputs.apple-fonts.packages.${pkgs.system}.sf-hebrew
-      inputs.apple-fonts.packages.${pkgs.system}.ny
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-pro
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-compact
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-mono
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-arabic
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-armenian
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-georgian
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-hebrew
+      inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.ny
     ]
     ++ (with pkgs.nerd-fonts; [
       caskaydia-cove

@@ -5,7 +5,7 @@
   ...
 }:
 let
-  matugen-git = inputs.matugen.packages.${pkgs.system}.default;
+  matugen-git = inputs.matugen.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
   home.packages = [

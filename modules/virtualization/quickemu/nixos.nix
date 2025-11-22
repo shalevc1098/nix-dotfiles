@@ -5,6 +5,6 @@
 }:
 {
   environment.systemPackages = [
-    inputs.quickemu.packages.${pkgs.system}.default
+    inputs.quickemu.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
