@@ -20,6 +20,19 @@ in
       #!/usr/bin/env bash
       set -eu
 
+      STATE_FILE="$HOME/.local/state/wallpaper.txt"
+      FALLBACK_WALL="${./wallpaper.jpg}"
+
+      if [ "''${1:-}" == "--boot" ]; then
+        if [ -f "$STATE_FILE" ]; then
+          selected=$(cat "$STATE_FILE")
+        else
+          selected="$FALLBACK_WALL"
+        fi
+        
+        exec "$0" "''${selected}"
+      fi
+
       if [ $# -eq 0 ]; then
         selected=$(${pkgs.zenity}/bin/zenity --file-selection --title="Select Wallpaper" --file-filter="Images | *.png *.jpg *.jpeg *.webp *.bmp *.gif" --file-filter="All Files | *")
         if [ -n "''${selected}" ]; then
@@ -119,7 +132,7 @@ in
     ];
 
     exec-once = [
-      "exec-once = sleep 0.5; wal \"$(cat ~/.local/state/wallpaper.txt || ${./wallpaper.png})\""
+      "sleep 0.5; ~/.local/bin/wal --boot"
     ];
   };
 }
