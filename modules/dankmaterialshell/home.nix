@@ -11,6 +11,7 @@
   programs.dankMaterialShell = {
     enable = true;
     enableDynamicTheming = false;
+    enableAudioWavelength = false;
     quickshell = {
       package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
         pkgs.kdePackages.kirigami
