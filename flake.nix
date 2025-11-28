@@ -9,9 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ags.url = "github:aylur/ags";
+    # ags.url = "github:aylur/ags";
 
-    astal.url = "github:aylur/astal";
+    # astal.url = "github:aylur/astal";
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -37,13 +37,13 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     dankmaterialshell = {
-    url = "github:AvengeMedia/DankMaterialShell";
+      url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -53,14 +53,10 @@
     };
 
     apple-fonts.url = "path:./modules/custom-fonts/apple-fonts";
-    
+
     apple-emoji-linux = {
       url = "github:samuelngs/apple-emoji-linux";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    wayland-pipewire-idle-inhibit = {
-      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
     };
 
     plasma-manager = {
