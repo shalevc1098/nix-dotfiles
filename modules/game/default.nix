@@ -1,5 +1,9 @@
 {
-  homeModule = { };
+  homeModule = {
+    imports = [
+      ./minecraft/home.nix
+    ];
+  };
   nixosModule =
     { inputs, ... }:
     {
