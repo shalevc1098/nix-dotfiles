@@ -4,8 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
-    (if pkgs ? nodejs_22 then nodejs_22 else nodejs_20)
-    corepack
+    nodejs
   ];
 
   home.sessionVariables = {
