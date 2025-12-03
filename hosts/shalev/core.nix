@@ -24,6 +24,7 @@
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
+      default = "saved";
 
       splashImage = ./grub_wallpaper.jpg;
 
