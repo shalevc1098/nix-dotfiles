@@ -5,13 +5,12 @@ let
 
   module_paths = [
     # Core
-    ../../modules/audio
+    ../../modules/system
 
     # Packages
     # ../../modules/ags
     ../../modules/anime
     ../../modules/anydesk
-    ../../modules/bluetooth
     ../../modules/bottles
     ../../modules/cliphist
     ../../modules/dankmaterialshell
@@ -19,7 +18,7 @@ let
     ../../modules/dev-tools
     ../../modules/docker
     # ../../modules/dunst
-    ../../modules/hypr
+    ../../modules/easyeffects
     ../../modules/fan-control
     # ../../modules/fcitx5
     # ../../modules/filebot
@@ -31,6 +30,7 @@ let
     ../../modules/gnome
     ../../modules/greetd
     ../../modules/gvfs
+    ../../modules/hypr
     ../../modules/kde
     ../../modules/kitty
     ../../modules/matugen
