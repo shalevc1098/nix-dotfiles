@@ -4,10 +4,13 @@
 
 {
   config,
+  inputs,
   pkgs,
   ...
 }:
-
+let
+  git-config = import "${inputs.mysecrets}/git-config.nix";
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -137,6 +140,9 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
     download-buffer-size = 536870912;
+    access-tokens = [
+      "github.com=${git-config.access_token}"
+    ];
   };
 
   # Allow unfree packages
