@@ -17,16 +17,17 @@
       inputs.apple-emoji-linux.packages.${pkgs.stdenv.hostPlatform.system}.default
       
       catppuccin-cursors
+      corefonts
       culmus
       dejavu_fonts
       font-awesome
+      inter
       material-symbols
+      noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       # noto-fonts-emoji  # Replaced with Apple Color Emoji
-      noto-fonts
       source-code-pro
-      corefonts
       # monaco (available via NUR)
       # ttf-ms-win11-auto (not in main nixpkgs)
       
