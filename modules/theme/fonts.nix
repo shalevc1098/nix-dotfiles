@@ -21,7 +21,6 @@
       culmus
       dejavu_fonts
       font-awesome
-      inter
       material-symbols
       noto-fonts
       noto-fonts-cjk-sans
