@@ -135,6 +135,7 @@
     disable_hyprland_logo = true;
     force_default_wallpaper = 0;
     allow_session_lock_restore = true;
+    disable_watchdog_warning = true;
 
     initial_workspace_tracking = false;
   };
