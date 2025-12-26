@@ -36,6 +36,7 @@ let
     ../../modules/matugen
     ../../modules/mpv
     # ../../modules/noctalia
+    ../../modules/libre-office
     ../../modules/lyx
     ../../modules/obs-studio
     ../../modules/openrgb
