@@ -74,9 +74,12 @@ in
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+    excludePackages = [ pkgs.xterm ];
   };
 
   # Define a user account. Don't forget to set a password with 'passwd'.
