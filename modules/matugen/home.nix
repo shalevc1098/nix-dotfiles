@@ -104,7 +104,7 @@ in
     [templates.niri]
     input_path = "${./templates/niri/colors.kdl}"
     output_path = "~/.config/niri/colors.kdl"
-    post_hook = "niri msg action reload-config || true"
+    post_hook = "niri msg action load-config-file || true"
 
     [templates.noctalia]
     input_path = "${./templates/noctalia/colors.json}"
