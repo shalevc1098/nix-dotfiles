@@ -1,0 +1,47 @@
+diff --git a/src/backend/drm/surface/mod.rs b/src/backend/drm/surface/mod.rs
+index 79f7b00..5d2f480 100644
+--- a/src/backend/drm/surface/mod.rs
++++ b/src/backend/drm/surface/mod.rs
+@@ -73,9 +73,14 @@ impl PlaneDamageClips {
+     ) -> io::Result<Option<Self>> {
+         let scale = src.size / dst.size.to_logical(1).to_buffer(1, Transform::Normal).to_f64();
+
++        // Buffer bounds for clamping damage rectangles
++        // (similar to wlroots' pixman_region32_intersect_rect in atomic.c:160)
++        let buffer_w = (src.loc.x + src.size.w) as i32;
++        let buffer_h = (src.loc.y + src.size.h) as i32;
++
+         let mut rects = damage
+             .into_iter()
+-            .map(|rect| {
++            .filter_map(|rect| {
+                 let mut rect = rect
+                     .to_f64()
+                     .to_logical(1f64)
+@@ -86,12 +91,19 @@ impl PlaneDamageClips {
+                     )
+                     .upscale(scale);
+                 rect.loc += src.loc;
+-                let rect = rect.to_i32_up();
++                let rect = rect.to_i32_up::<i32>();
+
+-                drm_ffi::drm_mode_rect {
+-                    x1: rect.loc.x,
+-                    y1: rect.loc.y,
+-                    x2: rect.loc.x.saturating_add(rect.size.w),
+-                    y2: rect.loc.y.saturating_add(rect.size.h),
++                // Clamp damage to buffer bounds to prevent out-of-bounds access
++                // This fixes flickering on NVIDIA GPUs at high refresh rates
++                let x1 = rect.loc.x.max(0).min(buffer_w);
++                let y1 = rect.loc.y.max(0).min(buffer_h);
++                let x2 = rect.loc.x.saturating_add(rect.size.w).max(0).min(buffer_w);
++                let y2 = rect.loc.y.saturating_add(rect.size.h).max(0).min(buffer_h);
++
++                // Skip empty rectangles after clamping
++                if x2 <= x1 || y2 <= y1 {
++                    return None;
+                 }
++
++                Some(drm_ffi::drm_mode_rect { x1, y1, x2, y2 })
+             })
+             .collect::<Vec<_>>();
