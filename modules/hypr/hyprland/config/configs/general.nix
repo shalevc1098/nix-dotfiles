@@ -63,18 +63,25 @@
   decoration = {
     rounding = 20;
 
+    # backup: size=14, passes=4, noise=0.01, contrast=1, brightness=1
+    # glassy: size=18, passes=5, noise=0.02, contrast=0.9, brightness=1.05, vibrancy=0.2
+    # apple liquid glass: size=12, passes=6, noise=0.005, contrast=0.85, brightness=1.1, vibrancy=0.4
+    # extreme wow:
     blur = {
       enabled = true;
       xray = true;
-      special = false;
+      special = true;
       new_optimizations = true;
       size = 14;
-      passes = 4;
-      brightness = 1;
-      noise = 0.01;
-      contrast = 1;
+      passes = 6;
+      brightness = 1.12;
+      noise = 0.008;
+      contrast = 0.82;
+      vibrancy = 0.5;
+      vibrancy_darkness = 0.3;
       popups = true;
-      popups_ignorealpha = 0.6;
+      popups_ignorealpha = 0.4;
+      ignore_opacity = true;
     };
 
     shadow = {
