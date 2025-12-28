@@ -32,9 +32,11 @@ let
     ../../modules/gvfs
     ../../modules/hypr
     ../../modules/kde
+    # ../../modules/keyd
     ../../modules/kitty
     ../../modules/matugen
     ../../modules/mpv
+    ../../modules/niri
     # ../../modules/noctalia
     ../../modules/libre-office
     ../../modules/lyx
