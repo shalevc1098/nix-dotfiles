@@ -31,4 +31,8 @@
       "$mainMod, C, exec, uwsm app -- code"
     ];
   };
+
+  programs.niri.settings.binds = {
+    "Mod+C".action.spawn = [ "code" ];
+  };
 }

@@ -14,4 +14,11 @@
       "match:class ^(zoom)$, float on"
     ];
   };
+
+  programs.niri.settings.window-rules = [
+    {
+      matches = [{ app-id = "^zoom$"; }];
+      open-floating = true;
+    }
+  ];
 }

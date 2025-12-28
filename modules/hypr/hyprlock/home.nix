@@ -23,6 +23,10 @@
     ];
   };
 
+  programs.niri.settings.binds = {
+    "Mod+L".action.spawn = [ "hyprlock" ];
+  };
+
   services.hypridle.settings = {
     general = {
       lock_cmd = "pidof hyprlock || uwsm app -- hyprlock";

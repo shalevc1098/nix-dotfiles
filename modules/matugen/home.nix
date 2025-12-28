@@ -101,6 +101,11 @@ in
     input_path = "${./templates/kitty/colors.conf}"
     output_path = "~/.config/kitty/colors.conf"
 
+    [templates.niri]
+    input_path = "${./templates/niri/colors.kdl}"
+    output_path = "~/.config/niri/colors.kdl"
+    post_hook = "niri msg action reload-config || true"
+
     [templates.noctalia]
     input_path = "${./templates/noctalia/colors.json}"
     output_path = "~/.config/noctalia/colors.json"
@@ -134,5 +139,14 @@ in
     exec-once = [
       "sleep 0.5; ~/.local/bin/wal --boot"
     ];
+  };
+
+  programs.niri.settings = {
+    spawn-at-startup = [
+      { command = [ "sh" "-c" "sleep 0.5; ~/.local/bin/wal --boot" ]; }
+    ];
+    binds = {
+      "Mod+Ctrl+T".action.spawn = [ "sh" "-c" "~/.local/bin/wal" ];
+    };
   };
 }

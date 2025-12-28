@@ -30,4 +30,14 @@
       "Ctrl+Super, R, exec, pkill quickshell; sleep 0.2 && dms run &"
     ];
   };
+
+  programs.niri.settings = {
+    spawn-at-startup = [
+      { command = [ "sh" "-c" "dms run &" ]; }
+    ];
+    binds = {
+      "Mod+Space".action.spawn = [ "sh" "-c" "pgrep quickshell && dms ipc call spotlight toggle || (pgrep wofi && pkill wofi || wofi)" ];
+      "Ctrl+Mod+R".action.spawn = [ "sh" "-c" "pkill quickshell; sleep 0.2 && dms run &" ];
+    };
+  };
 }

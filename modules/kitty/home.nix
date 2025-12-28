@@ -58,6 +58,11 @@
     "Super, Return, exec, uwsm app -- kitty"
   ];
 
+  programs.niri.settings.binds = {
+    "Mod+T".action.spawn = [ "kitty" ];
+    "Mod+Return".action.spawn = [ "kitty" ];
+  };
+
   xdg.desktopEntries.kitty-vim = {
     name = "Vim (Kitty)";
     exec = "kitty -e vim %F";

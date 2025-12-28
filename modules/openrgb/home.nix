@@ -7,4 +7,8 @@ in
       "openrgb -p ${profileName}"
     ];
   };
+
+  programs.niri.settings.spawn-at-startup = [
+    { command = [ "openrgb" "-p" profileName ]; }
+  ];
 }

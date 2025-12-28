@@ -14,4 +14,8 @@
     # "QSG_RHI_BACKEND=vulkan quickshell &"
     "quickshell &"
   ];
+
+  programs.niri.settings.spawn-at-startup = [
+    { command = [ "quickshell" ]; }
+  ];
 }

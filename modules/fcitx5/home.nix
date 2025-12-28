@@ -30,4 +30,17 @@
     "GLFW_IM_MODULE, ibus"
     "INPUT_METHOD, fcitx"
   ];
+
+  programs.niri.settings = {
+    spawn-at-startup = [
+      { command = [ "fcitx5" ]; }
+    ];
+    environment = {
+      QT_IM_MODULE = "fcitx";
+      XMODIFIERS = "@im=fcitx";
+      SDL_IM_MODULE = "fcitx";
+      GLFW_IM_MODULE = "ibus";
+      INPUT_METHOD = "fcitx";
+    };
+  };
 }
