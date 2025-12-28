@@ -29,6 +29,12 @@
       "Super, Super_L, exec, pgrep quickshell && dms ipc call spotlight toggle || (pgrep wofi && pkill wofi || wofi)"
       "Ctrl+Super, R, exec, pkill quickshell; sleep 0.2 && dms run &"
     ];
+
+    layerrule = [
+      "match:namespace dms:bar, blur on"
+      "match:namespace dms:bar, ignore_alpha 0.0"
+      "match:namespace dms:bar, xray on"
+    ];
   };
 
   programs.niri.settings = {
