@@ -12,6 +12,8 @@
   wayland.windowManager.hyprland.settings = {
     windowrule = [
       "match:class ^(zoom)$, float on"
+      "match:class ^(zoom)$, no_blur on"
+      "match:class ^(zoom)$, opacity 1.0 1.0"
     ];
   };
 
