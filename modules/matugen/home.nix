@@ -136,6 +136,11 @@ in
       "Ctrl+Super, T, exec, ~/.local/bin/wal"
     ];
 
+    windowrule = [
+      "match:title ^(Select Wallpaper)(.*)$, float on"
+      "match:title ^(Select Wallpaper)(.*)$, center on"
+    ];
+
     exec-once = [
       "sleep 0.5; ~/.local/bin/wal --boot"
     ];
