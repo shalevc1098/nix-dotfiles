@@ -63,10 +63,6 @@
   decoration = {
     rounding = 20;
 
-    # backup: size=14, passes=4, noise=0.01, contrast=1, brightness=1
-    # glassy: size=18, passes=5, noise=0.02, contrast=0.9, brightness=1.05, vibrancy=0.2
-    # apple liquid glass: size=12, passes=6, noise=0.005, contrast=0.85, brightness=1.1, vibrancy=0.4
-    # extreme wow:
     blur = {
       enabled = true;
       xray = true;
