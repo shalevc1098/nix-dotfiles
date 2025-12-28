@@ -29,6 +29,16 @@
           "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
           "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         };
+        niri = {
+          default = [
+            "gnome"
+            "gtk"
+          ];
+          "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+          "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+          "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+        };
       };
     };
   };
