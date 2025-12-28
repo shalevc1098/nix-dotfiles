@@ -34,5 +34,9 @@
     recursive = true;
   };
 
+  home.sessionVariables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  };
+
   systemd.user.sessionVariables = config.home.sessionVariables;
 }
