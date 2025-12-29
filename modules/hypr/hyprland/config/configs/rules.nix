@@ -3,8 +3,9 @@
     # Blur all windows
     "match:class .*, opacity 0.86 0.79"
 
-    # Disable blur for XWayland windows (or context menus with shadow would look weird)
+    # Disable blur for XWayland windows
     "match:xwayland 1, no_blur on"
+    "match:xwayland 1, opacity 1.0 1.0"
 
     # Floating windows
     "match:class ^(blueberry\\.py)$, float on"
