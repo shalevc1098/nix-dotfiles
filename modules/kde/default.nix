@@ -1,6 +1,7 @@
 {
   homeModule = {
     imports = [
+      ./ark/home.nix
       ./dolphin/home.nix
       ./gwenview/home.nix
       ./kate/home.nix
