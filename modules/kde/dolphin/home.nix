@@ -25,6 +25,7 @@
     windowrule = [
       "match:class org.freedesktop.impl.portal.desktop.kde, float on"
       "match:class org.freedesktop.impl.portal.desktop.kde, size (monitor_w*0.6) (monitor_h*0.65) "
+      "match:class org.kde.dolphin, opacity 0.86 0.79"
     ];
   };
 

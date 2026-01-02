@@ -16,4 +16,8 @@
     {
       enable = true;
     };
+
+  wayland.windowManager.hyprland.settings.windowrule = [
+    "match:class spotify, opacity 0.86 0.79"
+  ];
 }

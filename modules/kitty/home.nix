@@ -53,10 +53,15 @@
     };
   };
 
-  wayland.windowManager.hyprland.settings.bind = [
-    "Super, T, exec, uwsm app -- kitty"
-    "Super, Return, exec, uwsm app -- kitty"
-  ];
+  wayland.windowManager.hyprland.settings = {
+    bind = [
+      "Super, T, exec, uwsm app -- kitty"
+      "Super, Return, exec, uwsm app -- kitty"
+    ];
+    windowrule = [
+      "match:class kitty, opacity 0.86 0.79"
+    ];
+  };
 
   programs.niri.settings.binds = {
     "Mod+T".action.spawn = [ "kitty" ];
