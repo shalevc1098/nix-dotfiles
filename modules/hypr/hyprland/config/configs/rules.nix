@@ -1,29 +1,12 @@
 {
   windowrule = [
-    # Blur all windows
-    "match:class .*, opacity 0.86 0.79"
-
     # Disable blur for XWayland windows
     "match:xwayland 1, no_blur on"
     "match:xwayland 1, opacity 1.0 1.0"
 
     # Floating windows
-    "match:class ^(blueberry\\.py)$, float on"
+    "match:class blueberry.py, float on"
     "match:class ^(steam)$, float on"
-    "match:class ^(guifetch)$, float on"
-    "match:class ^(pavucontrol)$, float on"
-    "match:class ^(pavucontrol)$, size (monitor_w*0.45)"
-    "match:class ^(pavucontrol)$, center on"
-    "match:class ^(org.pulseaudio.pavucontrol)$, float on"
-    "match:class ^(org.pulseaudio.pavucontrol)$, size (monitor_w*0.45)"
-    "match:class ^(org.pulseaudio.pavucontrol)$, center on"
-    "match:class ^(nm-connection-editor)$, float on"
-    "match:class ^(nm-connection-editor)$, size (monitor_w*0.45)"
-    "match:class ^(nm-connection-editor)$, center on"
-    "match:class ^(heroic)$, float on"
-
-    # Tiling
-    "match:class ^dev\\.warp\\.Warp$, tile on"
 
     # Picture-in-Picture
     "match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$, float on"
