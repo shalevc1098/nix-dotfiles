@@ -65,14 +65,14 @@
 
     blur = {
       enabled = true;
-      xray = true;
-      special = true;
-      new_optimizations = true;
       size = 14;
       passes = 6;
-      brightness = 1.12;
+      new_optimizations = true;
+      xray = true;
+      special = true;
       noise = 0.008;
       contrast = 0.82;
+      brightness = 1.12;
       vibrancy = 0.5;
       vibrancy_darkness = 0.3;
       popups = true;
@@ -133,7 +133,7 @@
     animate_manual_resizes = false;
     animate_mouse_windowdragging = false;
     enable_swallow = false;
-    swallow_regex = "(foot|kitty|allacritty|Alacritty)";
+    swallow_regex = "(foot|kitty)";
 
     disable_hyprland_logo = true;
     force_default_wallpaper = 0;
