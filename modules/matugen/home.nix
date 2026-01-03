@@ -34,7 +34,9 @@ in
       fi
 
       if [ $# -eq 0 ]; then
-        selected=$(${pkgs.zenity}/bin/zenity --file-selection --title="Select Wallpaper" --file-filter="Images | *.png *.jpg *.jpeg *.webp *.bmp *.gif" --file-filter="All Files | *")
+        start_dir="$HOME/Pictures/Wallpapers"
+        [ -d "$start_dir" ] || start_dir="$HOME"
+        selected=$(${pkgs.zenity}/bin/zenity --file-selection --title="Select Wallpaper" --filename="$start_dir/" --file-filter="Images | *.png *.jpg *.jpeg *.webp *.bmp *.gif" --file-filter="All Files | *")
         if [ -n "''${selected}" ]; then
           exec "$0" "''${selected}"
         else
