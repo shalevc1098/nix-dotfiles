@@ -10,12 +10,14 @@
     # systemd.enable = true;
   };
 
-  wayland.windowManager.hyprland.settings.exec-once = [
-    # "QSG_RHI_BACKEND=vulkan quickshell &"
-    "quickshell &"
-  ];
-
   programs.niri.settings.spawn-at-startup = [
     { command = [ "quickshell" ]; }
   ];
+
+  wayland.windowManager.hyprland.settings = {
+    exec-once = [
+      # "QSG_RHI_BACKEND=vulkan quickshell &"
+      "quickshell &"
+    ];
+  };
 }

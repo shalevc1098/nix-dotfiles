@@ -10,7 +10,9 @@
   };
 
   # Disabled - Super key binding moved to keybinds.nix with quickshell/fuzzel
-  # wayland.windowManager.hyprland.settings.bind = [
-  #   "Super, Super_L, exec, pgrep wofi && pkill wofi || wofi"
-  # ];
+  # wayland.windowManager.hyprland.settings = {
+  #   bind = [
+  #     "Super, Super_L, exec, pgrep wofi && pkill wofi || wofi"
+  #   ];
+  # };
 }

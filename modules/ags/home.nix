@@ -43,10 +43,9 @@ in
   };
 
   # wayland.windowManager.hyprland.settings = {
-  #   # exec-once = [
-  #   #   "ags &"
-  #   # ];
-
+  #   exec-once = [
+  #     "ags &"
+  #   ];
   #   layerrule = [
   #     "noanim, walker"
   #     "noanim, selection"

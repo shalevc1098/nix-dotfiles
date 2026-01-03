@@ -3,7 +3,6 @@
   pkgs,
   ...
 }:
-
 {
   imports = [
     inputs.spicetify-nix.homeManagerModules.default
@@ -17,7 +16,9 @@
       enable = true;
     };
 
-  wayland.windowManager.hyprland.settings.windowrule = [
-    "match:class spotify, opacity 0.86 0.79"
-  ];
+  wayland.windowManager.hyprland.settings = {
+    windowrule = [
+      "match:class spotify, opacity 0.86 0.79"
+    ];
+  };
 }

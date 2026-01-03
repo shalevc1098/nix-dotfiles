@@ -4,7 +4,9 @@
     pkgs.hyprpicker
   ];
 
-  wayland.windowManager.hyprland.settings.layerrule = [
-    "noanim, hyprpicker"
-  ];
+  wayland.windowManager.hyprland.settings = {
+    layerrule = [
+      "noanim, hyprpicker"
+    ];
+  };
 }
