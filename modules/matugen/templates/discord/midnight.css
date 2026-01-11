@@ -121,4 +121,8 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
   [class*="clanTag"] [class*="tagText"] {
       color: var(--text-0);
   }
+
+  [class*="channelInfo"] [class*="-total"] {
+      color: var(--text-0);
+  }
 }
