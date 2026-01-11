@@ -171,7 +171,6 @@ in
     chntpw
   ];
 
-  programs.nix-ld.enable = true;
   services.power-profiles-daemon.enable = true;
 
   # services.desktopManager.plasma6.enable = true;
