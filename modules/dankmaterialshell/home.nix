@@ -5,10 +5,10 @@
 }:
 {
   imports = [
-    inputs.dankmaterialshell.homeModules.dankMaterialShell.default
+    inputs.dankmaterialshell.homeModules.dank-material-shell
   ];
 
-  programs.dankMaterialShell = {
+  programs.dank-material-shell = {
     enable = true;
     enableDynamicTheming = false;
     enableAudioWavelength = false;
@@ -45,5 +45,9 @@
       "Mod+Space".action.spawn = [ "sh" "-c" "pgrep quickshell && dms ipc call spotlight toggle || (pgrep wofi && pkill wofi || wofi)" ];
       "Ctrl+Mod+R".action.spawn = [ "sh" "-c" "pkill quickshell; sleep 0.2 && dms run &" ];
     };
+  };
+
+  home.sessionVariables = {
+    DMS_HYPRLAND_EXCLUSIVE_FOCUS = 1;
   };
 }
