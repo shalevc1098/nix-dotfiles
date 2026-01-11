@@ -121,7 +121,8 @@
 
   misc = {
     vfr = 0;
-    vrr = 1;
+    vrr = 0;
+    disable_xdg_env_checks = true;
     animate_manual_resizes = false;
     animate_mouse_windowdragging = false;
     enable_swallow = false;
