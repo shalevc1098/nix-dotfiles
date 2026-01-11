@@ -14,6 +14,10 @@ in
         name = git-config.user.name;
         email = git-config.user.email;
       };
+      safe.directory = [
+        "/mnt/T7Shield/*"
+        "/mnt/windows/*"
+      ];
     };
   };
 }
