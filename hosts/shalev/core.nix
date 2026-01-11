@@ -164,6 +164,7 @@ in
     sddm-astronaut
     nixfmt-rfc-style
     glib
+    gh
     jq
     net-tools
     zenity
