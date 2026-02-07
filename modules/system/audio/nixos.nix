@@ -4,7 +4,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
     extraConfig.pipewire."99-rate" = {
       "context.properties" = {
         "default.clock.rate" = 48000;
