@@ -10,6 +10,7 @@ let
     # Packages
     # ../../modules/ags
     ../../modules/anime
+    # ../../modules/apple
     ../../modules/anydesk
     ../../modules/bottles
     ../../modules/cliphist
@@ -18,13 +19,13 @@ let
     ../../modules/dev-tools
     ../../modules/docker
     # ../../modules/dunst
-    ../../modules/easyeffects
+    # ../../modules/easyeffects
     ../../modules/fan-control
     # ../../modules/fcitx5
     # ../../modules/filebot
     ../../modules/filezilla
-    ../../modules/fish
     ../../modules/firefox
+    ../../modules/fish
     # ../../modules/foot
     # ../../modules/fuzzel
     ../../modules/gnome
@@ -34,23 +35,25 @@ let
     ../../modules/kde
     # ../../modules/keyd
     ../../modules/kitty
+    ../../modules/libre-office
+    ../../modules/lyx
     ../../modules/matugen
     ../../modules/mpv
     ../../modules/niri
     # ../../modules/noctalia
-    ../../modules/libre-office
-    ../../modules/lyx
     ../../modules/obs-studio
     ../../modules/openrgb
     ../../modules/polkit
     ../../modules/qbittorrent
     # ../../modules/quickshell
+    ../../modules/razer
     ../../modules/screenshot
     ../../modules/spicetify
     ../../modules/ssh
     ../../modules/starship
     # ../../modules/swayosd
     ../../modules/swww
+    ../../modules/tailscale
     ../../modules/vencord
     ../../modules/virtualization
     # ../../modules/waybar

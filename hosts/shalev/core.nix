@@ -40,6 +40,10 @@ in
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  networking.hosts = {
+    "192.168.1.193" = [ "shalevnas" ];
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -170,9 +174,13 @@ in
     zenity
     dualsensectl
     chntpw
+    ffmpeg
+    portaudio
   ];
 
   services.power-profiles-daemon.enable = true;
+
+  powerManagement.cpuFreqGovernor = "performance";
 
   # services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm = {

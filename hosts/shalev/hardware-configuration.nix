@@ -22,7 +22,7 @@
     "uas"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelParams = [
     "acpi_enforce_resources=lax"
