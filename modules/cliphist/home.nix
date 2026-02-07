@@ -19,6 +19,8 @@
     ];
   };
 
+  services.wl-clip-persist.enable = true;
+
   programs.niri.settings = {
     spawn-at-startup = [
       { command = [ "wl-paste" "--type" "text" "--watch" "cliphist" "store" ]; }
