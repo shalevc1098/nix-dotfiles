@@ -4,6 +4,8 @@
 }:
 {
   home.packages = with pkgs; [
-    python310
+    (python313.withPackages (ps: with ps; [
+      tkinter
+    ]))
   ];
 }
