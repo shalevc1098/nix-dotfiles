@@ -5,10 +5,8 @@
 {
   home.packages = with pkgs; [
     ((kdePackages.callPackage "${pkgs.path}/pkgs/applications/misc/lyx" {
-      inherit (kdePackages) qtbase qtsvg;
-      mkDerivation = stdenv.mkDerivation;
+      inherit (kdePackages) qtbase qtsvg wrapQtAppsHook;
     }).overrideAttrs (oldAttrs: {
-      nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ kdePackages.wrapQtAppsHook ];
       configureFlags = [ "--enable-qt6" ] ++ (builtins.filter (flag: flag != "--enable-qt5") oldAttrs.configureFlags);
 
       # Patch Qt6 incompatibility in GuiSymbols.cpp
