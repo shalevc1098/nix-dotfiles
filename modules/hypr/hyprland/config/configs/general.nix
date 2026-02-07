@@ -122,6 +122,7 @@
   misc = {
     vfr = 0;
     vrr = 0;
+    middle_click_paste = false;
     disable_xdg_env_checks = true;
     animate_manual_resizes = false;
     animate_mouse_windowdragging = false;
