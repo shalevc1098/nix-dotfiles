@@ -175,6 +175,7 @@ in
     dualsensectl
     chntpw
     ffmpeg
+    lsof
     portaudio
   ];
 
