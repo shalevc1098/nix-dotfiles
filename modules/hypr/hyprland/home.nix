@@ -36,6 +36,9 @@
 
   home.sessionVariables = {
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    LIBVA_DRIVER_NAME = "nvidia";
+    NVD_BACKEND = "direct";
+    MOZ_DISABLE_RDD_SANDBOX = "1";
   };
 
   systemd.user.sessionVariables = config.home.sessionVariables;
