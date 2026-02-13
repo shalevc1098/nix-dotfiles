@@ -24,6 +24,8 @@
       Preferences = {
         "gfx.webrender.all" = true;
         "media.ffmpeg.vaapi.enabled" = true;
+        "media.hardware-video-decoding.force-enabled" = true;
+        "widget.dmabuf.force-enabled" = true;
         "layers.acceleration.force-enabled" = true;
       };
     };
