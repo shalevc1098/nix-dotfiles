@@ -6,6 +6,10 @@
 }:
 let
   lock_cmd = "pidof hyprlock || uwsm app -- hyprlock";
+  screen_off_cmd = "pidof hyprlock && hyprctl dispatch dpms off";
+  screen_on_cmd = "hyprctl dispatch dpms on";
+  lock_timeout = 300;
+  screen_timeout = 60;
 in
 {
   services.hypridle = {
@@ -13,18 +17,23 @@ in
     settings = {
       general = {
         before_sleep_cmd = lock_cmd;
-        after_sleep_cmd = "hyprctl dispatch dpms on";
+        after_sleep_cmd = screen_on_cmd;
       };
 
       listener = [
         {
-          timeout = 180;
+          timeout = lock_timeout;
           on-timeout = lock_cmd;
         }
         {
-          timeout = 240;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
+          timeout = lock_timeout + screen_timeout;
+          on-timeout = screen_off_cmd;
+          on-resume = screen_on_cmd;
+        }
+        {
+          timeout = screen_timeout;
+          on-timeout = screen_off_cmd;
+          on-resume = screen_on_cmd;
         }
       ];
     };
