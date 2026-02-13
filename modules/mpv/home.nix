@@ -12,7 +12,7 @@
 
       # Video settings
       hwdec = "auto";
-      vo = "gpu";
+      vo = "gpu-next";
 
       # Interface
       osd-level = 1;
