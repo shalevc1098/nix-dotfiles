@@ -55,12 +55,12 @@
     "Super+Alt, Page_Up, movetoworkspace, -1"
     "Super+Shift, Page_Down, movetoworkspace, r+1"
     "Super+Shift, Page_Up, movetoworkspace, r-1"
-    "Ctrl+Super+Shift, Right, movetoworkspace, r+1"
-    "Ctrl+Super+Shift, Left, movetoworkspace, r-1"
+    "Ctrl+Super+Shift, Right, exec, ${../../scripts/workspace_nav.sh} move-next-new"
+    "Ctrl+Super+Shift, Left, exec, ${../../scripts/workspace_nav.sh} move-prev"
     
     # Workspace navigation
-    "Ctrl+Super, Right, workspace, r+1"
-    "Ctrl+Super, Left, workspace, r-1"
+    "Ctrl+Super, Right, exec, ${../../scripts/workspace_nav.sh} next-new"
+    "Ctrl+Super, Left, exec, ${../../scripts/workspace_nav.sh} prev"
     "Ctrl+Super+Alt, Right, workspace, m+1"
     "Ctrl+Super+Alt, Left, workspace, m-1"
     "Super, Page_Down, workspace, +1"
