@@ -8,4 +8,6 @@
   ];
 
   services.hardware.openrgb.enable = true;
+
+  systemd.services.openrgb.serviceConfig.ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
 }
