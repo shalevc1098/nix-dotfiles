@@ -4,8 +4,8 @@
   ];
 
   monitor = [
-    "desc:Dell Inc. AW3225QF 68F3YZ3, 3840x2160@239.99Hz, 0x0, 1.5"
-    "desc:LG Electronics LG ULTRAGEAR 0x0007412E, 1920x1080@240, auto, 1"
+    "desc:ASUSTek COMPUTER INC PG32UCDM T7LMQS094714, 3840x2160@240.02Hz, 0x0, 1.5"
+    "desc:Dell Inc. AW3225QF 68F3YZ3, 3840x2160@239.99Hz, auto, 1.5"
   ];
 
   input = {
