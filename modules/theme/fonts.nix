@@ -22,7 +22,7 @@
       dejavu_fonts
       font-awesome
       material-symbols
-      noto-fonts
+      noto-fonts-lgc-plus
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       # noto-fonts-emoji  # Replaced with Apple Color Emoji
