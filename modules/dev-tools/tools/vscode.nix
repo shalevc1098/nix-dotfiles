@@ -2,6 +2,12 @@
   pkgs,
   ...
 }:
+let
+  dotnet-combined = pkgs.dotnetCorePackages.combinePackages [
+    pkgs.dotnet-sdk_8
+    pkgs.dotnet-sdk_10
+  ];
+in
 {
   programs.vscode = {
     enable = true;
@@ -10,7 +16,7 @@
         ps.libsecret
         ps.gnome-keyring
         ps.dbus
-        ps.dotnet-sdk
+        dotnet-combined
       ]
     );
   };
