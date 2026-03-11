@@ -12,6 +12,7 @@
       # Font
       font_family = "JetBrains Mono Nerd Font";
       font_size = 11.0;
+      "symbol_map U+0590-U+05FF" = "CaskaydiaCove NF Light";
 
       # Cursor
       cursor_shape = "beam";
