@@ -11,6 +11,7 @@
       imports = [
         inputs.nix-gaming.nixosModules.pipewireLowLatency
 
+        ./aagl/nixos.nix
         ./steam/nixos.nix
       ];
 
