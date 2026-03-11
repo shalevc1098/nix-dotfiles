@@ -45,7 +45,13 @@
       flake = false;
     };
 
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-gaming.url = "github:fufexan/nix-gaming";
+
 
     # noctalia = {
     #   url = "github:noctalia-dev/noctalia-shell";
@@ -65,7 +71,7 @@
     apple-fonts.url = "path:./modules/custom-fonts/apple-fonts";
 
     apple-emoji-linux = {
-      url = "github:samuelngs/apple-emoji-linux";
+      url = "github:samuelngs/apple-emoji-linux/v1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -74,8 +80,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    quickemu.url = "github:quickemu-project/quickemu";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
