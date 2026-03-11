@@ -28,6 +28,7 @@ in
       efiSupport = true;
       useOSProber = true;
       default = "saved";
+      configurationLimit = 5;
 
       splashImage = ./grub_wallpaper.jpg;
 
@@ -55,6 +56,17 @@ in
 
   # Enable i2c
   hardware.i2c.enable = true;
+
+  boot.tmp.useTmpfs = true;
+  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp";
+
+  # JMicron JM20337 USB-to-SATA bridge: disable UAS, WP detect, LUN scan, limit sectors
+  boot.extraModprobeConfig = ''
+    options usb-storage quirks=152d:2338:uwsm,174c:55aa:u
+  '';
+  services.udev.extraRules = ''
+    ATTRS{idVendor}=="152d", ATTRS{idProduct}=="2338", ENV{ID_ATA_SMART_ACCESS}="none"
+  '';
 
   # Enable colord for color profile management
   services.colord.enable = true;
@@ -177,6 +189,7 @@ in
     ffmpeg
     lsof
     portaudio
+    unzip
   ];
 
   services.power-profiles-daemon.enable = true;

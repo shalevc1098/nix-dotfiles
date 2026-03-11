@@ -32,6 +32,7 @@ let
     ../../modules/greetd
     ../../modules/gvfs
     ../../modules/hypr
+    ../../modules/jellyfin-desktop
     ../../modules/kde
     # ../../modules/keyd
     ../../modules/kitty
@@ -56,6 +57,7 @@ let
     ../../modules/tailscale
     ../../modules/vencord
     ../../modules/virtualization
+    ../../modules/wine
     # ../../modules/waybar
     ../../modules/wlogout
     ../../modules/wlsunset
