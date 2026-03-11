@@ -31,6 +31,7 @@
 	--accent-3: {{colors.primary.default.hex}};             /* accent buttons */
 	--accent-4: {{colors.surface_bright.default.hex}};      /* accent buttons when hovered */
 	--accent-5: {{colors.primary_fixed_dim.default.hex}};   /* accent buttons when clicked */
+	--accent-new: #ed4245;
 	--mention:  {{colors.surface.default.hex}};             /* mentions & mention messages */
 	--mention-hover: {{colors.surface_bright.default.hex}}; /* mentions & mention messages when hovered */
 
@@ -88,6 +89,7 @@ body {
     --font: 'SF Hebrew', 'SF Pro Display'; /* change to '' for default discord font */
     --code-font: 'SF Mono'; /* change to '' for default discord font */
     font-weight: 400; /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
+    --dms-icon-color-after: var(--text-0);
 }
 
 /* Selected chat/friend text */
@@ -114,6 +116,7 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
 @container root style(--colors: on) {
   .visual-refresh body,
   .visual-refresh .theme-dark:not(.custom-user-profile-theme) {
+      --white: var(--text-1);
       --white-500: var(--text-1);
   }
 
@@ -122,7 +125,22 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
       color: var(--text-0);
   }
 
-  [class*="channelInfo"] [class*="-total"] {
+  [class*="channelInfo"] [class*="total"] {
       color: var(--text-0);
+  }
+
+  [class*="lookFilled"],
+  [class*="barBase"] {
+      --white: var(--text-0);
+      --text-strong: var(--text-0);
+  }
+
+  [class*="topPill"] [class*="item"] {
+      --white: var(--text-0);
+      --text-strong: var(--text-0);
+  }
+
+  [class*="numberBadge"] {
+      --text-3: var(--text-0);
   }
 }

@@ -45,10 +45,16 @@ in
       fi
 
       wallpaper=$(${pkgs.coreutils}/bin/readlink -f "$1")
-      ${matugen-git}/bin/matugen image "''${wallpaper}" 1>/dev/null -t scheme-tonal-spot
+      ${matugen-git}/bin/matugen image "''${wallpaper}" 1>/dev/null -t scheme-tonal-spot --source-color-index 0
 
       if command -v kde-material-you-colors >/dev/null 2>&1; then
-        kde-material-you-colors >/dev/null 2>&1 &
+        source_color_file="$HOME/.local/state/matugen-source-color.txt"
+        if [ -f "$source_color_file" ]; then
+          source_color=$(tr -d '[:space:]' < "$source_color_file")
+          kde-material-you-colors --color "''${source_color}" >/dev/null 2>&1 &
+        else
+          kde-material-you-colors >/dev/null 2>&1 &
+        fi
       fi
     '';
   };
@@ -119,6 +125,10 @@ in
     [templates.quickshell]
     input_path = "${./templates/quickshell/colors.json}"
     output_path = "~/.local/quickshell/colors.json"
+
+    [templates.source_color]
+    input_path = "${./templates/source-color.txt}"
+    output_path = "~/.local/state/matugen-source-color.txt"
 
     [templates.spicetify]
     input_path = "${./templates/spicetify/color.ini}"
