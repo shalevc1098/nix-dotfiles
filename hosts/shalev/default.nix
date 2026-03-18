@@ -26,6 +26,7 @@ let
     ../../modules/filezilla
     ../../modules/firefox
     ../../modules/fish
+    ../../modules/flatpak
     # ../../modules/foot
     # ../../modules/fuzzel
     ../../modules/gnome
@@ -37,6 +38,7 @@ let
     # ../../modules/keyd
     ../../modules/kitty
     ../../modules/libre-office
+    ../../modules/localsend
     ../../modules/lyx
     ../../modules/matugen
     ../../modules/mpv
@@ -55,6 +57,7 @@ let
     # ../../modules/swayosd
     ../../modules/swww
     ../../modules/tailscale
+    ../../modules/telegram
     ../../modules/vencord
     ../../modules/virtualization
     ../../modules/wine
