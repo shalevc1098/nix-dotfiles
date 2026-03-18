@@ -9,13 +9,14 @@
 
   wayland.windowManager.hyprland.settings = {
     windowrule = [
-      "match:title ^Minecraft Console Edition$, float on"
+      "match:class ^Minecraft, float on"
+      "match:class ^Minecraft, center on"
     ];
   };
 
   programs.niri.settings.window-rules = [
     {
-      matches = [{ title = "^Minecraft Console Edition$"; }];
+      matches = [{ app-id = "^Minecraft"; }];
       open-floating = true;
     }
   ];

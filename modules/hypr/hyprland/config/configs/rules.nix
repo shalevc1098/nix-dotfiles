@@ -6,7 +6,6 @@
 
     # Floating windows
     "match:class blueberry.py, float on"
-    "match:class ^(steam)$, float on"
 
     # Picture-in-Picture
     "match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$, float on"
