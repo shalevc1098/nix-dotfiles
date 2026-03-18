@@ -125,12 +125,20 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
       color: var(--text-0);
   }
 
+  [class*="chipletContainerInner"][class*="clanTag"] {
+      background: var(--bg-1);
+  }
+
+  [class*="botTagRegular"] {
+      --white: var(--text-0);
+  }
+
   [class*="channelInfo"] [class*="total"] {
       color: var(--text-0);
   }
 
   [class*="lookFilled"],
-  [class*="barBase"] {
+  [class*="barBase"]:not([class*="unreadBar"]) {
       --white: var(--text-0);
       --text-strong: var(--text-0);
   }
@@ -142,5 +150,9 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
 
   [class*="numberBadge"] {
       --text-3: var(--text-0);
+  }
+
+  [class*="unreadBar"] {
+      --text-overlay-light: var(--text-1);
   }
 }
