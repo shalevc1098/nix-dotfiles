@@ -18,6 +18,11 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprlock = {
       url = "github:hyprwm/hyprlock";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +57,11 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 
+    steam-presence = {
+      url = "github:JustTemmie/steam-presence";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
 
     # noctalia = {
     #   url = "github:noctalia-dev/noctalia-shell";
@@ -71,7 +81,7 @@
     apple-fonts.url = "path:./modules/custom-fonts/apple-fonts";
 
     apple-emoji-linux = {
-      url = "github:samuelngs/apple-emoji-linux/v1";
+      url = "github:samuelngs/apple-emoji-linux/b22ae7fe82d3278da88fcc90bc83973ffce44f1d";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
