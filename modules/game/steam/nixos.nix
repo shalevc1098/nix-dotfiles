@@ -1,8 +1,12 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }:
+let
+  steam-config = import "${inputs.mysecrets}/steam-config.nix";
+in
 {
   programs.steam = {
     enable = true;
@@ -14,6 +18,12 @@
       gamescope
       mangohud
     ];
+
+    presence = {
+      enable = true;
+      steamApiKey = steam-config.apiKey;
+      userIds = [ steam-config.userId ];
+    };
   };
 
   # hardware.steam-hardware.enable = lib.mkDefault false;
