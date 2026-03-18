@@ -71,6 +71,9 @@ in
   # Enable colord for color profile management
   services.colord.enable = true;
 
+  # User account info
+  services.accounts-daemon.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 
@@ -189,6 +192,7 @@ in
     ffmpeg
     lsof
     portaudio
+    zip
     unzip
   ];
 

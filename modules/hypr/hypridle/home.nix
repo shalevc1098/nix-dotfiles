@@ -14,6 +14,7 @@ in
 {
   services.hypridle = {
     enable = true;
+    package = inputs.hypridle.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       general = {
         before_sleep_cmd = lock_cmd;

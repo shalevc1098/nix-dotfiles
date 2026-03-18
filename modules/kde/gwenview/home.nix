@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     kdePackages.gwenview
+    kdePackages.kimageformats
   ];
 
   wayland.windowManager.hyprland.settings = {
