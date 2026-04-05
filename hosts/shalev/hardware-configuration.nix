@@ -30,6 +30,7 @@
     "nvidia-drm.modeset=1"
     "nvidia-drm.fbdev=1"
     "iommu=pt"
+    "module_blacklist=amdgpu"
   ];
   boot.kernelModules = [
     "kvm-amd"
