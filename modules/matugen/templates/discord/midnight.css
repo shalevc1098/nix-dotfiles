@@ -152,7 +152,8 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
       --text-3: var(--text-0);
   }
 
-  [class*="unreadBar"] {
+  [class*="unreadBar"],
+  [class*="mention"] {
       --text-overlay-light: var(--text-1);
   }
 }
