@@ -19,11 +19,11 @@ in
       mangohud
     ];
 
-    presence = {
-      enable = true;
-      steamApiKey = steam-config.apiKey;
-      userIds = [ steam-config.userId ];
-    };
+    # presence = {
+    #   enable = true;
+    #   steamApiKey = steam-config.apiKey;
+    #   userIds = [ steam-config.userId ];
+    # };
   };
 
   # hardware.steam-hardware.enable = lib.mkDefault false;
