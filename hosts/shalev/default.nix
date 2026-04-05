@@ -41,6 +41,7 @@ let
     ../../modules/localsend
     ../../modules/lyx
     ../../modules/matugen
+    ../../modules/mission-center
     ../../modules/mpv
     ../../modules/niri
     # ../../modules/noctalia
@@ -52,14 +53,17 @@ let
     ../../modules/razer
     ../../modules/screenshot
     ../../modules/spicetify
+    ../../modules/sox
     ../../modules/ssh
     ../../modules/starship
+    ../../modules/sunshine
     # ../../modules/swayosd
     ../../modules/swww
     ../../modules/tailscale
     ../../modules/telegram
     ../../modules/vencord
     ../../modules/virtualization
+    ../../modules/waydroid
     ../../modules/wine
     # ../../modules/waybar
     ../../modules/wlogout
