@@ -23,7 +23,7 @@
           # Fetch Apple font DMGs with fixed hashes
           sf-pro = pkgs.fetchurl {
             url = "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg";
-            sha256 = "1bk9zm8kmdxlxah28a9imh741r60skc23f9kmz0lswwbk19phk9f";
+            sha256 = "W0sZkipBtrduInk0oocbFAXX1qy0Z+yk2xUyFfDWx4s=";
           };
           sf-compact = pkgs.fetchurl {
             url = "https://devimages-cdn.apple.com/design/resources/download/SF-Compact.dmg";
