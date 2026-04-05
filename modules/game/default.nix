@@ -2,6 +2,7 @@
   homeModule = {
     imports = [
       ./minecraft/home.nix
+      ./scanmem/home.nix
       ./steam/home.nix
     ];
   };
@@ -10,7 +11,7 @@
     {
       imports = [
         inputs.nix-gaming.nixosModules.pipewireLowLatency
-        inputs.steam-presence.nixosModules.steam-presence
+        # inputs.steam-presence.nixosModules.steam-presence
 
         ./aagl/nixos.nix
         ./steam/nixos.nix
