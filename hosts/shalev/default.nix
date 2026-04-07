@@ -12,6 +12,7 @@ let
     ../../modules/anime
     # ../../modules/apple
     ../../modules/anydesk
+    ../../modules/awww
     ../../modules/bottles
     ../../modules/cliphist
     ../../modules/dankmaterialshell
@@ -58,7 +59,6 @@ let
     ../../modules/starship
     ../../modules/sunshine
     # ../../modules/swayosd
-    ../../modules/swww
     ../../modules/tailscale
     ../../modules/telegram
     ../../modules/vencord

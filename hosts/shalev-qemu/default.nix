@@ -9,6 +9,7 @@ let
 
     # Packages
     ../../modules/agsv1
+    ../../modules/awww
     ../../modules/cliphist
     ../../modules/dev-tools
     ../../modules/hypr
@@ -18,7 +19,6 @@ let
     ../../modules/kde
     ../../modules/ssh
     ../../modules/starship
-    ../../modules/swww
     ../../modules/wlogout
     ../../modules/wofi
     ../../modules/xiccd

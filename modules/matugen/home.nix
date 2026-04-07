@@ -61,7 +61,7 @@ in
 
   xdg.configFile."matugen/config.toml".text = ''
     [config.wallpaper]
-    command = "${pkgs.swww}/bin/swww"
+    command = "${pkgs.awww}/bin/awww"
     arguments = ["img", "--transition-step", "100", "--transition-fps", "120", "--transition-type", "grow", "--transition-angle", "30", "--transition-duration", "1"]
 
     [templates.ags]
