@@ -32,7 +32,7 @@
 	--accent-4: {{colors.surface_bright.default.hex}};      /* accent buttons when hovered */
 	--accent-5: {{colors.primary_fixed_dim.default.hex}};   /* accent buttons when clicked */
 	--accent-new: #ed4245;
-	--mention:  {{colors.surface.default.hex}};             /* mentions & mention messages */
+	--mention:  {{colors.secondary_container.default.hex}};  /* mentions & mention messages */
 	--mention-hover: {{colors.surface_bright.default.hex}}; /* mentions & mention messages when hovered */
 
 	/* text colors */
@@ -113,6 +113,10 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
   font-family: 'SF Mono', var(--code-font), 'Consolas', 'Monaco', monospace !important;
 } */
 
+.vc-settings-quickActions-pill:hover {
+	color: {{colors.on_primary.default.hex}};
+}
+
 @container root style(--colors: on) {
   .visual-refresh body,
   .visual-refresh .theme-dark:not(.custom-user-profile-theme) {
@@ -155,5 +159,9 @@ code, .code, .codeBlockText-11zEgc, .codeLine-2C-9aH, [class*="code"] {
   [class*="unreadBar"],
   [class*="mention"] {
       --text-overlay-light: var(--text-1);
+  }
+
+  .visual-refresh .theme-dark {
+      --control-secondary-text-hover: {{colors.on_primary.default.hex}};
   }
 }
