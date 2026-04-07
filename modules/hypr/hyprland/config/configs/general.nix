@@ -120,7 +120,6 @@
   };
 
   misc = {
-    vfr = 0;
     vrr = 0;
     middle_click_paste = false;
     disable_xdg_env_checks = true;
