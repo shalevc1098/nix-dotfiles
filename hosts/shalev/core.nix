@@ -194,6 +194,7 @@ in
     portaudio
     zip
     unzip
+    ncdu
   ];
 
   services.power-profiles-daemon.enable = true;
