@@ -6,6 +6,12 @@
     zlib
     curl
     openssl
+    qt6.qtbase
+    qt6.qtwayland
+    wayland
+    libxkbcommon
+    libGL
+    fontconfig
   ];
 
   environment.variables = {
