@@ -56,7 +56,7 @@ let
     # ../../modules/quickshell
     ../../modules/razer
     ../../modules/screenshot
-    ../../modules/spicetify
+    ../../modules/spotify
     ../../modules/sox
     ../../modules/ssh
     ../../modules/starship
