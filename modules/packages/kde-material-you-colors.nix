@@ -3,7 +3,7 @@
 let
   kde-material-you-colors = pkgs.python3Packages.buildPythonApplication rec {
     pname = "kde-material-you-colors";
-    version = "1.10.1";
+    version = "2.2.0";
     
     pyproject = true;
     
@@ -11,7 +11,7 @@ let
       owner = "luisbocanegra";
       repo = "kde-material-you-colors";
       rev = "v${version}";
-      sha256 = "sha256-qiaFHu4eyX73cAbMdoP46SiiFjNWx2vXWVzEbCsTNBI=";
+      sha256 = "sha256-sN7u3jePevJnTHhQL6eAYKU2AD2QNW7VYuEHLN5RsK8=";
     };
     
     build-system = with pkgs.python3Packages; [
@@ -23,7 +23,7 @@ let
       pillow
       materialyoucolor
       dbus-python
-      requests
+      python-magic
       numpy
     ];
 
