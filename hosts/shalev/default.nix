@@ -12,6 +12,7 @@ let
     ../../modules/anime
     # ../../modules/apple
     ../../modules/anydesk
+    ../../modules/auto-clicker
     ../../modules/awww
     ../../modules/bottles
     ../../modules/cliphist
@@ -47,6 +48,8 @@ let
     ../../modules/niri
     # ../../modules/noctalia
     ../../modules/obs-studio
+    ../../modules/ollama
+    ../../modules/opencode
     ../../modules/openrgb
     ../../modules/polkit
     ../../modules/qbittorrent
