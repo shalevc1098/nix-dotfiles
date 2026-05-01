@@ -22,7 +22,12 @@
     "uas"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
+  boot.initrd.kernelModules = [
+    "nvidia"
+    "nvidia_modeset"
+    "nvidia_uvm"
+    "nvidia_drm"
+  ];
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelParams = [
     "acpi_enforce_resources=lax"
@@ -48,17 +53,27 @@
   # Fixed the bluetooth connection refused - 0x0003 security block error I had with my DualSense controller
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    it87
+    (lib.hiPrio (
+      it87.overrideAttrs (old: {
+        postInstall = (old.postInstall or "") + ''
+          # Compress the module to match standard NixOS behavior
+          find $out -name '*.ko' -exec xz {} \;
+
+          # Delete the module metadata to prevent it from overwriting the main kernel's metadata
+          rm -f $out/lib/modules/*/modules.*
+        '';
+      })
+    ))
   ];
-  boot.kernelPatches = [
-    {
-      name = "disable-it87";
-      patch = null;
-      structuredExtraConfig = with lib.kernel; {
-        SENSORS_IT87 = no;
-      };
-    }
-  ];
+  # boot.kernelPatches = [
+  #   {
+  #     name = "disable-it87";
+  #     patch = null;
+  #     structuredExtraConfig = with lib.kernel; {
+  #       SENSORS_IT87 = no;
+  #     };
+  #   }
+  # ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/f2d9e5cc-0f37-4645-abcb-02a43e019297";
