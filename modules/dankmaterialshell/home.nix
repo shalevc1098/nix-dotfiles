@@ -36,6 +36,10 @@
       "match:namespace dms:bar, ignore_alpha 0.0"
       "match:namespace dms:bar, xray on"
     ];
+
+    windowrule = [
+      "match:class com.danklinux.dms, opacity 0.86 0.79"
+    ];
   };
 
   programs.niri.settings = {
