@@ -13,7 +13,7 @@
         inputs.nix-gaming.nixosModules.pipewireLowLatency
         # inputs.steam-presence.nixosModules.steam-presence
 
-        ./aagl/nixos.nix
+        # ./aagl/nixos.nix
         ./steam/nixos.nix
       ];
 
