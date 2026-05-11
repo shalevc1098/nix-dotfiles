@@ -39,12 +39,13 @@ let
     ../../modules/kde
     # ../../modules/keyd
     ../../modules/kitty
-    ../../modules/libre-office
+    # ../../modules/libre-office
     ../../modules/localsend
     ../../modules/lyx
     ../../modules/matugen
     ../../modules/mission-center
     ../../modules/mpv
+    ../../modules/network-discovery
     ../../modules/niri
     # ../../modules/noctalia
     ../../modules/obs-studio
@@ -60,13 +61,13 @@ let
     ../../modules/sox
     ../../modules/ssh
     ../../modules/starship
-    ../../modules/sunshine
+    # ../../modules/sunshine
     # ../../modules/swayosd
     ../../modules/tailscale
     ../../modules/telegram
     ../../modules/vencord
     ../../modules/virtualization
-    ../../modules/waydroid
+    # ../../modules/waydroid
     ../../modules/wine
     # ../../modules/waybar
     ../../modules/wlogout
