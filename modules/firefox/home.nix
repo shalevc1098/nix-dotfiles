@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 }:
@@ -10,6 +11,7 @@
 
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     nativeMessagingHosts = [
       pkgs.firefoxpwa
       pkgs.pywalfox-native
@@ -34,7 +36,7 @@
         wrapProgram $out/bin/firefox --set GTK_USE_PORTAL 1
       '';
     });
-    profiles."pndugfhk.default" = {
+    profiles.default = {
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
         darkreader
