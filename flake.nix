@@ -57,10 +57,10 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 
-    steam-presence = {
-      url = "github:JustTemmie/steam-presence";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # steam-presence = {
+    #   url = "github:JustTemmie/steam-presence";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
 
     # noctalia = {
