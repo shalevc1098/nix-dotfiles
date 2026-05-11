@@ -6,6 +6,7 @@
       ./gwenview/home.nix
       ./kate/home.nix
       # ./kdeconnect/home.nix
+      ./kwallet/home.nix
       # ./polkit/home.nix
       ./theme/home.nix
       ./theme/kde-material-you-colors.nix
@@ -16,6 +17,7 @@
       ./ark/nixos.nix
       ./dolphin/nixos.nix
       ./kdeconnect/nixos.nix
+      ./kwallet/nixos.nix
       ./settings/nixos.nix
     ];
   };
