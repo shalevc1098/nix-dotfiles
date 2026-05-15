@@ -10,6 +10,7 @@
       ./bluetooth/nixos.nix
       ./graphics/nixos.nix
       ./nix-ld/nixos.nix
+      ./overlays/nixos.nix
     ];
   };
 }
