@@ -1,6 +1,9 @@
 /secrets/
 hosts/shalev/.ssh/
 
+result
+result-*
+
 CLAUDE.md
 GEMINI.md
 
