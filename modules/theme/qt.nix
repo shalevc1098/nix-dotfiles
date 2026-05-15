@@ -14,7 +14,7 @@
     qt6.qt5compat
     qt6.qtwayland
     kdePackages.qtwayland
-    libsForQt5.kio
+    kdePackages.kio
   ];
 
   qt = {
