@@ -29,10 +29,6 @@
     settings = import ./config {
       inherit lib hyprLib;
     };
-
-    extraConfig = ''
-      pcall(dofile, os.getenv("HOME") .. "/.config/hypr/colors.lua")
-    '';
   };
 
   home.file.".config/hypr/shaders" = {

@@ -144,6 +144,10 @@ in
     output_path = "~/.config/waybar/colors.css"
   '';
 
+  wayland.windowManager.hyprland.extraConfig = ''
+    pcall(dofile, os.getenv("HOME") .. "/.config/hypr/colors.lua")
+  '';
+
   wayland.windowManager.hyprland.settings = {
     bind = [
       (hyprLib.mkBindExec "CTRL + SUPER + T" "~/.local/bin/wal")
