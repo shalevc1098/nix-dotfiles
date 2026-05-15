@@ -3,6 +3,8 @@
 let
   lib = inputs.nixpkgs.lib;
 
+  username = "shalev";
+
   module_paths = [
     # Core
     ../../modules/system
@@ -106,13 +108,38 @@ let
       scale = 1.5;
     }
   ];
+
+  hostNiriOutputs = {
+    "ASUSTek COMPUTER INC PG32UCDM T7LMQS094714" = {
+      mode = {
+        width = 3840;
+        height = 2160;
+        refresh = 240.02;
+      };
+      scale = 1.5;
+      position = {
+        x = 0;
+        y = 0;
+      };
+      variable-refresh-rate = "on-demand";
+    };
+
+    "Dell Inc. AW3225QF 68F3YZ3" = {
+      mode = {
+        width = 3840;
+        height = 2160;
+        refresh = 239.991;
+      };
+      scale = 1.5;
+      variable-refresh-rate = "on-demand";
+    };
+  };
 in
 
 lib.nixosSystem {
   system = "x86_64-linux";
   specialArgs = {
-    inherit inputs;
-    username = "shalev";
+    inherit inputs username;
   };
   modules = [
     # System
@@ -123,14 +150,14 @@ lib.nixosSystem {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = { inherit inputs hyprLib hostMonitors; };
+      home-manager.extraSpecialArgs = { inherit inputs hyprLib hostMonitors hostNiriOutputs; };
       home-manager.backupFileExtension = "backup";
 
-      home-manager.users.shalev = {
+      home-manager.users.${username} = {
         imports = homeModules;
 
-        home.username = "shalev";
-        home.homeDirectory = "/home/shalev";
+        home.username = username;
+        home.homeDirectory = "/home/${username}";
         home.stateVersion = "25.05";
       };
     }

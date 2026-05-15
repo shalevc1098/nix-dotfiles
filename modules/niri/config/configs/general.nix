@@ -1,30 +1,6 @@
-# General niri configuration: outputs, input, layout, animations
+{ hostNiriOutputs, ... }:
 {
-  # Outputs configuration
-  outputs = {
-    "Dell Inc. AW3225QF 68F3YZ3" = {
-      mode = {
-        width = 3840;
-        height = 2160;
-        refresh = 239.991;
-      };
-      scale = 1.5;
-      position = {
-        x = 0;
-        y = 0;
-      };
-      variable-refresh-rate = "on-demand";
-    };
-
-    "LG Electronics LG ULTRAGEAR 0x0007412E" = {
-      mode = {
-        width = 1920;
-        height = 1080;
-        refresh = 240.001;
-      };
-      variable-refresh-rate = "on-demand";
-    };
-  };
+  outputs = hostNiriOutputs;
 
   # Input configuration
   input = {

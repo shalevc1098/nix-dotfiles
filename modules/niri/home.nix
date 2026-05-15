@@ -1,5 +1,6 @@
 {
   config,
+  hostNiriOutputs,
   inputs,
   lib,
   pkgs,
@@ -20,7 +21,7 @@
 
   programs.niri = {
     settings = lib.mkMerge [
-      (import ./config { inherit lib; })
+      (import ./config { inherit lib hostNiriOutputs; })
       {
         spawn-at-startup = [
           { command = [ "niri-float-sticky" ]; }
