@@ -17,6 +17,7 @@ let
     ../../modules/audacity
     ../../modules/auto-clicker
     ../../modules/awww
+    ../../modules/bitwarden-cli
     ../../modules/bottles
     ../../modules/cliphist
     ../../modules/dankmaterialshell
