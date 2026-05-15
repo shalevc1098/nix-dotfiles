@@ -12,6 +12,7 @@ let
     ../../modules/anime
     # ../../modules/apple
     ../../modules/anydesk
+    ../../modules/audacity
     ../../modules/auto-clicker
     ../../modules/awww
     ../../modules/bottles
