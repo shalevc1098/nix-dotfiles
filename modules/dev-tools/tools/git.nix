@@ -1,5 +1,6 @@
 {
   inputs,
+  username,
   ...
 }:
 let
@@ -13,7 +14,10 @@ in
       user = {
         name = git-config.user.name;
         email = git-config.user.email;
+        signingkey = "/home/${username}/.ssh/id_ed25519.pub";
       };
+      commit.gpgsign = true;
+      gpg.format = "ssh";
     };
   };
 }
