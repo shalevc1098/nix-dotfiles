@@ -1,5 +1,6 @@
 {
   config,
+  hostMonitors,
   hyprLib,
   inputs,
   lib,
@@ -27,7 +28,7 @@
     portalPackage = null;
 
     settings = import ./config {
-      inherit lib hyprLib;
+      inherit lib hyprLib hostMonitors;
     };
   };
 

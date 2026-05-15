@@ -1,5 +1,7 @@
-{ hyprLib, ... }:
+{ hyprLib, hostMonitors, ... }:
 {
+  monitor = hostMonitors;
+
   curve = [
     (hyprLib.mkCurve "md3_decel" "bezier" [ [ 0.05 0.7 ] [ 0.1 1 ] ])
     (hyprLib.mkCurve "md3_accel" "bezier" [ [ 0.3 0 ] [ 0.8 0.15 ] ])
@@ -21,21 +23,6 @@
     { leaf = "fadeLayersOut"; enabled = true; speed = 0.5; bezier = "menu_accel"; }
     { leaf = "workspaces"; enabled = true; speed = 6; bezier = "smooth"; style = "slide"; }
     { leaf = "specialWorkspace"; enabled = true; speed = 3; bezier = "smooth"; style = "slidevert"; }
-  ];
-
-  monitor = [
-    {
-      output = "desc:ASUSTek COMPUTER INC PG32UCDM T7LMQS094714";
-      mode = "3840x2160@240.02Hz";
-      position = "0x0";
-      scale = 1.5;
-    }
-    {
-      output = "desc:Dell Inc. AW3225QF 68F3YZ3";
-      mode = "3840x2160@239.99Hz";
-      position = "auto";
-      scale = 1.5;
-    }
   ];
 
   config = {

@@ -1,5 +1,6 @@
 {
   pkgs,
+  username,
   ...
 }:
 {
@@ -9,7 +10,7 @@
       initial_session = {
         command = "uwsm start hyprland-uwsm.desktop";
         # command = "niri-session";
-        user = "shalev";
+        user = username;
       };
       default_session = initial_session;
     };

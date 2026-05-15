@@ -1,6 +1,7 @@
 {
   lib,
   hyprLib,
+  hostMonitors,
   ...
 }:
 let
@@ -13,7 +14,7 @@ let
     let
       imported = import (configDir + "/${name}");
     in
-    if lib.isFunction imported then imported { inherit hyprLib lib; } else imported;
+    if lib.isFunction imported then imported { inherit hyprLib lib hostMonitors; } else imported;
   mergeConfig =
     set1: set2:
     lib.foldr (

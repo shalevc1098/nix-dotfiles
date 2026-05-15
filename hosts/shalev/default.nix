@@ -91,6 +91,21 @@ let
   homeModules = lib.forEach modules (x: x.homeModule);
 
   hyprLib = import ../../modules/hypr/hyprland/lib.nix { inherit lib; };
+
+  hostMonitors = [
+    {
+      output = "desc:ASUSTek COMPUTER INC PG32UCDM T7LMQS094714";
+      mode = "3840x2160@240.02Hz";
+      position = "0x0";
+      scale = 1.5;
+    }
+    {
+      output = "desc:Dell Inc. AW3225QF 68F3YZ3";
+      mode = "3840x2160@239.99Hz";
+      position = "auto";
+      scale = 1.5;
+    }
+  ];
 in
 
 lib.nixosSystem {
@@ -108,7 +123,7 @@ lib.nixosSystem {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = { inherit inputs hyprLib; };
+      home-manager.extraSpecialArgs = { inherit inputs hyprLib hostMonitors; };
       home-manager.backupFileExtension = "backup";
 
       home-manager.users.shalev = {
