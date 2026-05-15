@@ -1,4 +1,5 @@
 {
+  hyprLib,
   pkgs,
   ...
 }:
@@ -11,9 +12,7 @@
     { command = [ "xiccd" ]; }
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "xiccd"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.on = [
+    (hyprLib.mkStartHook [ "xiccd" ])
+  ];
 }

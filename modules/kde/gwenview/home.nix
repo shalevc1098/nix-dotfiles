@@ -5,13 +5,9 @@
     kdePackages.kimageformats
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    windowrule = [
-      "match:class org.kde.gwenview, float on"
-      "match:class org.kde.gwenview, size (monitor_w*0.6) (monitor_h*0.65)"
-      "match:class org.kde.gwenview, center on"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.window_rule = [
+    { match = { class = "org.kde.gwenview"; }; float = true; size = [ "(monitor_w*0.6)" "(monitor_h*0.65)" ]; center = true; }
+  ];
 
   programs.niri.settings.window-rules = [
     {

@@ -89,6 +89,8 @@ let
 
   nixosModules = lib.forEach modules (x: x.nixosModule);
   homeModules = lib.forEach modules (x: x.homeModule);
+
+  hyprLib = import ../../modules/hypr/hyprland/lib.nix { inherit lib; };
 in
 
 lib.nixosSystem {
@@ -106,7 +108,7 @@ lib.nixosSystem {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = { inherit inputs; };
+      home-manager.extraSpecialArgs = { inherit inputs hyprLib; };
       home-manager.backupFileExtension = "backup";
 
       home-manager.users.shalev = {

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ hyprLib, pkgs, ... }:
 {
   home.packages = with pkgs; [
     grimblast
@@ -10,16 +10,12 @@
     save_dir=$HOME/Pictures
   '';
 
-  wayland.windowManager.hyprland.settings = {
-    bind = [
-      "Super+Shift, S, exec, grimblast --freeze copy area; pkill -9 hyprpicker" # Region Screenshot (freeze screen while selecting)
-      "Super+Shift+Ctrl, S, exec, grimblast --freeze save area - | swappy -f -; pkill -9 hyprpicker" # Region Screenshot with editor
-      "Alt, Print, exec, grimblast copy window" # Window Screenshot
-    ];
-    bindl = [
-      ", Print, exec, grimblast copy output" # Fullscreen Screenshot
-    ];
-  };
+  wayland.windowManager.hyprland.settings.bind = [
+    (hyprLib.mkBindExec "SUPER + SHIFT + S" "grimblast --freeze copy area; pkill -9 hyprpicker") # Region (freeze + copy)
+    (hyprLib.mkBindExec "SUPER + SHIFT + CTRL + S" "grimblast --freeze save area - | swappy -f -; pkill -9 hyprpicker") # Region (editor)
+    (hyprLib.mkBindExec "ALT + Print" "grimblast copy window") # Window screenshot
+    (hyprLib.mkBindExecFlags "Print" "grimblast copy output" { locked = true; }) # Fullscreen (was bindl)
+  ];
 
   programs.niri.settings.binds = {
     "Mod+Shift+S".action.screenshot = {};

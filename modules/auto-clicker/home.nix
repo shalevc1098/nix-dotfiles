@@ -85,9 +85,7 @@ in
     categories = [ "Utility" ];
   };
 
-  wayland.windowManager.hyprland.settings = {
-    windowrule = [
-      "match:title ^(autoclicker-pick)$, no_blur on"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.window_rule = [
+    { match = { title = "^(autoclicker-pick)$"; }; no_blur = true; }
+  ];
 }

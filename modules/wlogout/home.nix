@@ -79,9 +79,7 @@
     '';
   };
 
-  wayland.windowManager.hyprland.settings = {
-    layerrule = [
-      "match:namespace logout_dialog, blur on"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.layer_rule = [
+    { match = { namespace = "logout_dialog"; }; blur = true; }
+  ];
 }

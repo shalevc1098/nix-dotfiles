@@ -1,4 +1,5 @@
 {
+  hyprLib,
   pkgs,
   ...
 }:
@@ -22,13 +23,11 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "easyeffects --gapplication-service"
+    on = [
+      (hyprLib.mkStartHook [ "easyeffects --gapplication-service" ])
     ];
-    windowrule = [
-      "match:class com.github.wwmm.easyeffects, float on"
-      "match:class com.github.wwmm.easyeffects, size (monitor_w*0.6) (monitor_h*0.7)"
-      "match:class com.github.wwmm.easyeffects, center on"
+    window_rule = [
+      { match = { class = "com.github.wwmm.easyeffects"; }; float = true; size = [ "(monitor_w*0.6)" "(monitor_h*0.7)" ]; center = true; }
     ];
   };
 }

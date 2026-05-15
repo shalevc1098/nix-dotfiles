@@ -7,12 +7,9 @@
     prismlauncher
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    windowrule = [
-      "match:class ^Minecraft, float on"
-      "match:class ^Minecraft, center on"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.window_rule = [
+    { match = { class = "^Minecraft"; }; float = true; center = true; }
+  ];
 
   programs.niri.settings.window-rules = [
     {

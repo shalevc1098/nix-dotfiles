@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ hyprLib, pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,13 +7,13 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "noctalia-shell &"
+    on = [
+      (hyprLib.mkStartHook [ "noctalia-shell &" ])
     ];
 
     bind = [
-      "Super, Super_L, exec, pgrep quickshell && noctalia-shell ipc call launcher toggle || (pgrep wofi && pkill wofi || wofi)"
-      "Ctrl+Super, R, exec, pkill quickshell; sleep 0.2 && noctalia-shell &"
+      (hyprLib.mkBindExec "SUPER + Super_L" "pgrep quickshell && noctalia-shell ipc call launcher toggle || (pgrep wofi && pkill wofi || wofi)")
+      (hyprLib.mkBindExec "CTRL + SUPER + R" "pkill quickshell; sleep 0.2 && noctalia-shell &")
     ];
   };
 

@@ -1,4 +1,5 @@
 {
+  hyprLib,
   pkgs,
   ...
 }:
@@ -33,15 +34,15 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "fcitx5"
+    on = [
+      (hyprLib.mkStartHook [ "fcitx5" ])
     ];
     env = [
-      "QT_IM_MODULE, fcitx"
-      "XMODIFIERS, @im=fcitx"
-      "SDL_IM_MODULE, fcitx"
-      "GLFW_IM_MODULE, ibus"
-      "INPUT_METHOD, fcitx"
+      (hyprLib.mkEnv "QT_IM_MODULE" "fcitx")
+      (hyprLib.mkEnv "XMODIFIERS" "@im=fcitx")
+      (hyprLib.mkEnv "SDL_IM_MODULE" "fcitx")
+      (hyprLib.mkEnv "GLFW_IM_MODULE" "ibus")
+      (hyprLib.mkEnv "INPUT_METHOD" "fcitx")
     ];
   };
 }

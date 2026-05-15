@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ hyprLib, pkgs, ... }:
 {
   home.packages = with pkgs; [
     kdePackages.plasma-nm
@@ -9,9 +9,7 @@
     { command = [ "sh" "-c" "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1" ]; }
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.on = [
+    (hyprLib.mkStartHook [ "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1" ])
+  ];
 }

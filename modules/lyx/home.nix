@@ -30,9 +30,7 @@
     culmus
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    windowrule = [
-      "match:class lyx, opacity 0.86 0.79"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.window_rule = [
+    { match = { class = "lyx"; }; opacity = "0.86 0.79"; }
+  ];
 }

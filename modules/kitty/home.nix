@@ -1,5 +1,6 @@
 {
   config,
+  hyprLib,
   ...
 }:
 {
@@ -56,11 +57,11 @@
 
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "Super, T, exec, uwsm app -- kitty"
-      "Super, Return, exec, uwsm app -- kitty"
+      (hyprLib.mkBindExec "SUPER + T" "uwsm app -- kitty")
+      (hyprLib.mkBindExec "SUPER + Return" "uwsm app -- kitty")
     ];
-    windowrule = [
-      "match:class kitty, opacity 0.86 0.79"
+    window_rule = [
+      { match = { class = "kitty"; }; opacity = "0.86 0.79"; }
     ];
   };
 

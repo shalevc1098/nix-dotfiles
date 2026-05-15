@@ -7,9 +7,7 @@
     enable = true;
   };
 
-  wayland.windowManager.hyprland.settings = {
-    windowrule = [
-      "match:class vesktop|discord|Discord, opacity 0.86 0.79"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.window_rule = [
+    { match = { class = "vesktop|discord|Discord"; }; opacity = "0.86 0.79"; }
+  ];
 }

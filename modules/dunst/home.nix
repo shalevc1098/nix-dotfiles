@@ -1,3 +1,4 @@
+{ hyprLib, ... }:
 {
   services.dunst = {
     enable = true;
@@ -7,9 +8,7 @@
     { command = [ "dunst" ]; }
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "dunst"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.on = [
+    (hyprLib.mkStartHook [ "dunst" ])
+  ];
 }

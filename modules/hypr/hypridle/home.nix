@@ -1,4 +1,5 @@
 {
+  hyprLib,
   lib,
   inputs,
   pkgs,
@@ -40,9 +41,7 @@ in
     };
   };
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "hypridle"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.on = [
+    (hyprLib.mkStartHook [ "hypridle" ])
+  ];
 }

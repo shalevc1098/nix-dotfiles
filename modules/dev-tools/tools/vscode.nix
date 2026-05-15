@@ -1,4 +1,5 @@
 {
+  hyprLib,
   pkgs,
   ...
 }:
@@ -32,11 +33,9 @@ in
   #   };
   # };
 
-  wayland.windowManager.hyprland.settings = {
-    bind = [
-      "$mainMod, C, exec, uwsm app -- code"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.bind = [
+    (hyprLib.mkBindExec "SUPER + C" "uwsm app -- code")
+  ];
 
   programs.niri.settings.binds = {
     "Mod+C".action.spawn = [ "code" ];

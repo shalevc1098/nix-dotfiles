@@ -1,5 +1,6 @@
 {
   config,
+  hyprLib,
   inputs,
   lib,
   pkgs,
@@ -20,13 +21,13 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    configType = "hyprlang";
+    configType = "lua";
     # set the flake package
     package = null;
     portalPackage = null;
 
     settings = import ./config {
-      inherit lib;
+      inherit lib hyprLib;
     };
   };
 

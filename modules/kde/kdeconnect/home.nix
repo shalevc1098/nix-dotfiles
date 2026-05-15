@@ -1,3 +1,4 @@
+{ hyprLib, ... }:
 {
   services.kdeconnect.enable = true;
 
@@ -5,9 +6,7 @@
     { command = [ "kdeconnect-indicator" ]; }
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "kdeconnect-indicator &"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.on = [
+    (hyprLib.mkStartHook [ "kdeconnect-indicator &" ])
+  ];
 }

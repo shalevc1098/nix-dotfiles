@@ -1,64 +1,62 @@
+let
+  pipTitle = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$";
+  dialogTitles = [
+    "^(Open File)(.*)$"
+    "^(Select a File)(.*)$"
+    "^(Choose wallpaper)(.*)$"
+    "^(Open Folder)(.*)$"
+    "^(Save As)(.*)$"
+    "^(Library)(.*)$"
+    "^(File Upload)(.*)$"
+  ];
+  dialogFloatCenter = map (t: { match = { title = t; }; float = true; center = true; }) dialogTitles;
+
+  noAnimLayers = [ "walker" "selection" "overview" "anyrun" "indicator.*" "osk" "hyprpicker" "noanim" ];
+  noAnimLayerRules = map (n: { match = { namespace = n; }; no_anim = true; }) noAnimLayers;
+in
 {
-  windowrule = [
-    # Disable blur for XWayland windows
-    "match:xwayland 1, no_blur on"
-    "match:xwayland 1, opacity 1.0 1.0"
+  window_rule =
+    [
+      # Disable blur for XWayland windows
+      { match = { xwayland = true; }; no_blur = true; opacity = "1.0 1.0"; }
 
-    # Floating windows
-    "match:class blueberry.py, float on"
+      # Floating windows
+      { match = { class = "blueberry.py"; }; float = true; }
 
-    # Picture-in-Picture
-    "match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$, float on"
-    "match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$, keep_aspect_ratio on"
-    "match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$, move 73% 72%"
-    "match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$, size (monitor_w*0.25) (monitor_h*0.25)"
-    "match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$, pin on"
+      # Picture-in-Picture
+      {
+        match = { title = pipTitle; };
+        float = true;
+        keep_aspect_ratio = true;
+        move = [ "73%" "72%" ];
+        size = [ "(monitor_w*0.25)" "(monitor_h*0.25)" ];
+        pin = true;
+      }
+    ]
+    ++ dialogFloatCenter
+    ++ [
+      # Tearing
+      { match = { title = ".*\\.exe"; }; immediate = true; }
+      { match = { class = "^(steam_app)"; }; immediate = true; }
 
-    # Dialog windows – float+center these windows.
-    "match:title ^(Open File)(.*)$, center on"
-    "match:title ^(Select a File)(.*)$, center on"
-    "match:title ^(Choose wallpaper)(.*)$, center on"
-    "match:title ^(Open Folder)(.*)$, center on"
-    "match:title ^(Save As)(.*)$, center on"
-    "match:title ^(Library)(.*)$, center on"
-    "match:title ^(File Upload)(.*)$, center on"
-    "match:title ^(Open File)(.*)$, float on"
-    "match:title ^(Select a File)(.*)$, float on"
-    "match:title ^(Choose wallpaper)(.*)$, float on"
-    "match:title ^(Open Folder)(.*)$, float on"
-    "match:title ^(Save As)(.*)$, float on"
-    "match:title ^(Library)(.*)$, float on"
-    "match:title ^(File Upload)(.*)$, float on"
+      # No shadow for tiled windows (matches windows that are not floating).
+      # { match = { float = false; }; no_shadow = true; }
+    ];
 
-    # Tearing
-    "match:title .*\\.exe, immediate on"
-    "match:class ^(steam_app), immediate on"
-
-    # No shadow for tiled windows (matches windows that are not floating).
-    # "match:float 0, no_shadow on"
+  workspace_rule = [
+    { workspace = "special:special"; gaps_out = 30; }
   ];
 
-  workspace = [
-    "special:special, gapsout:30"
-  ];
-
-  layerrule = [
-    "match:namespace .*, xray on"
-    # "match:namespace .*, no_anim on"
-    "match:namespace walker, no_anim on"
-    "match:namespace selection, no_anim on"
-    "match:namespace overview, no_anim on"
-    "match:namespace anyrun, no_anim on"
-    "match:namespace indicator.*, no_anim on"
-    "match:namespace osk, no_anim on"
-    "match:namespace hyprpicker, no_anim on"
-    "match:namespace noanim, no_anim on"
-    "match:namespace gtk-layer-shell, blur on"
-    "match:namespace gtk-layer-shell, ignore_alpha 0.0"
-    "match:namespace launcher, blur on"
-    "match:namespace launcher, ignore_alpha 0.5"
-    "match:namespace notifications, blur on"
-    "match:namespace notifications, ignore_alpha 0.69"
-    "match:namespace logout_dialog, blur on"
-  ];
+  layer_rule =
+    [
+      { match = { namespace = ".*"; }; xray = true; }
+      # { match = { namespace = ".*"; }; no_anim = true; }
+    ]
+    ++ noAnimLayerRules
+    ++ [
+      { match = { namespace = "gtk-layer-shell"; }; blur = true; ignore_alpha = 0.0; }
+      { match = { namespace = "launcher"; }; blur = true; ignore_alpha = 0.5; }
+      { match = { namespace = "notifications"; }; blur = true; ignore_alpha = 0.69; }
+      { match = { namespace = "logout_dialog"; }; blur = true; }
+    ];
 }

@@ -1,4 +1,5 @@
 {
+  hyprLib,
   pkgs,
   inputs,
   ...
@@ -14,10 +15,7 @@
     { command = [ "quickshell" ]; }
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      # "QSG_RHI_BACKEND=vulkan quickshell &"
-      "quickshell &"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.on = [
+    (hyprLib.mkStartHook [ "quickshell &" ])
+  ];
 }

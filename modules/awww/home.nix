@@ -1,4 +1,5 @@
 {
+  hyprLib,
   pkgs,
   ...
 }:
@@ -11,9 +12,7 @@
     { command = [ "awww-daemon" "--format" "xrgb" ]; }
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "awww-daemon --format xrgb"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.on = [
+    (hyprLib.mkStartHook [ "awww-daemon --format xrgb" ])
+  ];
 }

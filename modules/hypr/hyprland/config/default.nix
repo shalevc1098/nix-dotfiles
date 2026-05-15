@@ -1,5 +1,6 @@
 {
   lib,
+  hyprLib,
   ...
 }:
 let
@@ -7,7 +8,12 @@ let
   configFiles = builtins.filter (name: builtins.match ".*\\.nix$" name != null) (
     builtins.attrNames (builtins.readDir configDir)
   );
-  configs = map (name: configDir + "/${name}") configFiles;
+  importConfig =
+    name:
+    let
+      imported = import (configDir + "/${name}");
+    in
+    if lib.isFunction imported then imported { inherit hyprLib lib; } else imported;
   mergeConfig =
     set1: set2:
     lib.foldr (
@@ -30,4 +36,4 @@ let
     ) set1 (lib.attrNames set2);
   mergeConfigList = lib.foldl (a: b: mergeConfig a b) { };
 in
-mergeConfigList (lib.forEach configs (x: import x))
+mergeConfigList (lib.forEach configFiles importConfig)
