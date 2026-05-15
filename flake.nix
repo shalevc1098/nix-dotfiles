@@ -113,12 +113,6 @@
         nixosConfigurations.shalev = (import ./hosts/shalev) {
           inherit inputs;
         };
-        nixosConfigurations.shalev-qemu = (import ./hosts/shalev-qemu) {
-          inherit inputs;
-        };
-        nixosConfigurations.shalev-vmware = (import ./hosts/shalev-vmware) {
-          inherit inputs;
-        };
       };
     };
 }
