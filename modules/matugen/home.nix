@@ -1,5 +1,6 @@
 {
   config,
+  hyprLib,
   inputs,
   pkgs,
   ...
@@ -97,8 +98,8 @@ in
     output_path = "~/.config/fuzzel/fuzzel_theme.ini"
 
     [templates.hyprland]
-    input_path = '${./templates/hyprland/colors.conf}'
-    output_path = '~/.config/hypr/colors.conf'
+    input_path = '${./templates/hyprland/colors.lua}'
+    output_path = '~/.config/hypr/colors.lua'
     post_hook = 'hyprctl reload'
 
     [templates.hyprlock]
@@ -145,16 +146,15 @@ in
 
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "Ctrl+Super, T, exec, ~/.local/bin/wal"
+      (hyprLib.mkBindExec "CTRL + SUPER + T" "~/.local/bin/wal")
     ];
 
-    windowrule = [
-      "match:title ^(Select Wallpaper)(.*)$, float on"
-      "match:title ^(Select Wallpaper)(.*)$, center on"
+    window_rule = [
+      { match = { title = "^(Select Wallpaper)(.*)$"; }; float = true; center = true; }
     ];
 
-    exec-once = [
-      "sleep 0.5; ~/.local/bin/wal --boot"
+    on = [
+      (hyprLib.mkStartHook [ "sleep 0.5; ~/.local/bin/wal --boot" ])
     ];
   };
 
