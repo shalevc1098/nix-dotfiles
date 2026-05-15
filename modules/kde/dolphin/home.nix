@@ -28,18 +28,4 @@
       { match = { class = "org.kde.dolphin"; }; opacity = "0.86 0.79"; }
     ];
   };
-
-  programs.niri.settings = {
-    binds = {
-      "Mod+E".action.spawn = [ "dolphin" "--new-window" ];
-    };
-    window-rules = [
-      {
-        matches = [{ app-id = "^org\\.freedesktop\\.impl\\.portal\\.desktop\\.kde$"; }];
-        open-floating = true;
-        default-column-width.proportion = 0.6;
-        default-window-height.proportion = 0.65;
-      }
-    ];
-  };
 }

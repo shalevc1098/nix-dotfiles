@@ -20,19 +20,6 @@
     fcitx5-gtk
   ];
 
-  programs.niri.settings = {
-    spawn-at-startup = [
-      { command = [ "fcitx5" ]; }
-    ];
-    environment = {
-      QT_IM_MODULE = "fcitx";
-      XMODIFIERS = "@im=fcitx";
-      SDL_IM_MODULE = "fcitx";
-      GLFW_IM_MODULE = "ibus";
-      INPUT_METHOD = "fcitx";
-    };
-  };
-
   wayland.windowManager.hyprland.settings = {
     on = [
       (hyprLib.mkStartHook [ "fcitx5" ])

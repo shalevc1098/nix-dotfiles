@@ -11,10 +11,6 @@
     # systemd.enable = true;
   };
 
-  programs.niri.settings.spawn-at-startup = [
-    { command = [ "quickshell" ]; }
-  ];
-
   wayland.windowManager.hyprland.settings.on = [
     (hyprLib.mkStartHook [ "quickshell &" ])
   ];

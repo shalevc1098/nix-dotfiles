@@ -36,8 +36,4 @@ in
   wayland.windowManager.hyprland.settings.bind = [
     (hyprLib.mkBindExec "SUPER + C" "uwsm app -- code")
   ];
-
-  programs.niri.settings.binds = {
-    "Mod+C".action.spawn = [ "code" ];
-  };
 }
