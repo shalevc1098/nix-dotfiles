@@ -97,6 +97,9 @@
       "nofail"
       "windows_names"
       "locale=en_US.utf8"
+      "uid=1000"
+      "gid=100"
+      "umask=0022"
       "x-gvfs-show"
       "x-gvfs-name=Windows"
     ];
@@ -110,6 +113,9 @@
       "nofail"
       "windows_names"
       "locale=en_US.utf8"
+      "uid=1000"
+      "gid=100"
+      "umask=0022"
       "x-gvfs-show"
       "x-gvfs-name=T7 Shield"
     ];
