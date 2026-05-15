@@ -125,7 +125,7 @@ lib.nixosSystem {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = { inherit inputs hyprLib hostMonitors; };
+      home-manager.extraSpecialArgs = { inherit inputs hyprLib hostMonitors username; };
       home-manager.backupFileExtension = "backup";
 
       home-manager.users.${username} = {
