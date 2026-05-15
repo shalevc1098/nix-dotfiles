@@ -60,6 +60,7 @@ let
     ../../modules/razer
     ../../modules/screenshot
     ../../modules/spotify
+    ../../modules/sops
     ../../modules/sox
     ../../modules/ssh
     ../../modules/starship
