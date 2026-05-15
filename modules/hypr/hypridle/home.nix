@@ -7,8 +7,8 @@
 }:
 let
   lock_cmd = "pidof hyprlock || uwsm app -- hyprlock";
-  screen_off_cmd = "pidof hyprlock && hyprctl dispatch dpms off";
-  screen_on_cmd = "hyprctl dispatch dpms on";
+  screen_off_cmd = ''pidof hyprlock && hyprctl dispatch 'hl.dsp.dpms({ action = "disable" })' '';
+  screen_on_cmd = ''hyprctl dispatch 'hl.dsp.dpms({ action = "enable" })' '';
   lock_timeout = 300;
   screen_timeout = 60;
 in
