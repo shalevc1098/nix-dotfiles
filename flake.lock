@@ -922,10 +922,10 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1778855524,
-        "narHash": "sha256-XDiajeo4YEvcNFQs52hySYIurp6hHs+r2nMRaCt2jms=",
+        "lastModified": 1780057870,
+        "narHash": "sha256-ZI5lFPreeheyru22hBJvwkihKrqRCT1umcnsJAxQv8Y=",
         "ref": "refs/heads/master",
-        "rev": "38f22af65c41a652286c79b3f99142c5166e0498",
+        "rev": "f200b88b5b2698ec160c899f0a7e3a6a2769097b",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/shalevc1098/nix-secrets"

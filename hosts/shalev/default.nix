@@ -59,6 +59,7 @@ let
     ../../modules/qbittorrent
     # ../../modules/quickshell
     ../../modules/razer
+    ../../modules/restic
     ../../modules/screenshot
     ../../modules/spotify
     ../../modules/sops
