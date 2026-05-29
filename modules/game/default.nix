@@ -14,6 +14,7 @@
         # inputs.steam-presence.nixosModules.steam-presence
 
         # ./aagl/nixos.nix
+        ./controller/nixos.nix
         ./steam/nixos.nix
       ];
 
