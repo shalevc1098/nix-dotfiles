@@ -4,8 +4,8 @@
 }:
 {
   home.packages = with pkgs; [
-    ((kdePackages.callPackage "${pkgs.path}/pkgs/applications/misc/lyx" {
-      inherit (kdePackages) qtbase qtsvg wrapQtAppsHook;
+    ((kdePackages.callPackage "${pkgs.path}/pkgs/by-name/ly/lyx/package.nix" {
+      libsForQt5 = kdePackages;
     }).overrideAttrs (oldAttrs: {
       configureFlags = [ "--enable-qt6" ] ++ (builtins.filter (flag: flag != "--enable-qt5") oldAttrs.configureFlags);
 
