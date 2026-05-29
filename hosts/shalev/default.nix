@@ -52,7 +52,7 @@ let
     ../../modules/network-discovery
     # ../../modules/noctalia
     ../../modules/obs-studio
-    ../../modules/ollama
+    # ../../modules/ollama
     ../../modules/opencode
     ../../modules/openrgb
     ../../modules/polkit
