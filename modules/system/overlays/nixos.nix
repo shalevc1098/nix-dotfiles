@@ -1,9 +1,9 @@
 {
   nixpkgs.overlays = [
     (final: prev: {
-      openldap = prev.openldap.overrideAttrs (_: {
-        doCheck = false;
-      });
+      openldap = prev.openldap.overrideAttrs {
+        doCheck = !prev.stdenv.hostPlatform.isi686;
+      };
     })
   ];
 }
