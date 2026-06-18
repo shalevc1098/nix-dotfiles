@@ -191,16 +191,20 @@ in
     glib
     gh
     jq
+    openssl
     net-tools
     zenity
     dualsensectl
     chntpw
-    ffmpeg
+    (ffmpeg.override {
+      withSamba = true;
+    })
     lsof
     portaudio
     zip
     unzip
     ncdu
+    chromaprint
   ];
 
   services.power-profiles-daemon.enable = true;
