@@ -9,6 +9,8 @@
     enable = true;
   };
 
+  hardware.nvidia-container-toolkit.enable = true;
+
   users.users.${username}.extraGroups = [
     "docker"
   ];
