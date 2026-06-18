@@ -4,7 +4,7 @@ set -g fish_color_command {{colors.primary.default.hex_stripped}}
 set -g fish_color_comment {{colors.outline.default.hex_stripped}}
 set -g fish_color_cwd green
 set -g fish_color_cwd_root red
-set -g fish_color_end {{colors.tertiary_fixed_dim.default.hex_stripped}}
+set -g fish_color_end {{colors.tertiary.default.hex_stripped}}
 set -g fish_color_error {{colors.error.default.hex_stripped}}
 set -g fish_color_escape {{colors.outline.default.hex_stripped}}
 set -g fish_color_history_current --bold

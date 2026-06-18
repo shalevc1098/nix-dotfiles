@@ -12,6 +12,10 @@
 
     interactiveShellInit = ''
       set fish_greeting
+
+      function __matugen_reload_colors --on-variable __matugen_theme
+        source ~/.config/fish/colors.fish
+      end
     '';
 
     functions = {

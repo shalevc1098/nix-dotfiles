@@ -33,7 +33,7 @@
 	--accent-2: {{colors.primary.default.hex}};             /* general unread/mention elements, some icons when active */
 	--accent-3: {{colors.primary.default.hex}};             /* accent buttons */
 	--accent-4: {{colors.surface_bright.default.hex}};      /* accent buttons when hovered */
-	--accent-5: {{colors.primary_fixed_dim.default.hex}};   /* accent buttons when clicked */
+	--accent-5: {{colors.primary.default.hex}};   /* accent buttons when clicked */
 	--accent-new: #ed4245;
 	--mention:  linear-gradient(to right, #{{colors.primary.default.hex_stripped}}1A 40%, transparent); /* mentions & mention messages */
 	--mention-hover: {{colors.surface_bright.default.hex}}; /* mentions & mention messages when hovered */

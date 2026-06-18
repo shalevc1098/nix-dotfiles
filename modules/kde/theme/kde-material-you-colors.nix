@@ -72,7 +72,7 @@ in
 
     # A script/command that will be executed on start or wallpaper/dark/light/settings change
     # Apply the color scheme to KDE apps
-    on_change_hook = kwriteconfig6 --file kdeglobals --group General --key ColorScheme MaterialYouDark
+    on_change_hook = bash -c 'kwriteconfig6 --file kdeglobals --group General --key ColorScheme MaterialYou$([ "$(cat ~/.local/state/theme-mode.txt 2>/dev/null)" = light ] && echo Light || echo Dark)'
 
     # Scheme Variant
     # Changes between Material You scheme variants (0-8)

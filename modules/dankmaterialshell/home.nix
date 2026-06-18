@@ -11,7 +11,7 @@
 
   programs.dank-material-shell = {
     enable = true;
-    enableDynamicTheming = false;
+    enableDynamicTheming = true;
     enableAudioWavelength = false;
     enableCalendarEvents = false;
     quickshell = {

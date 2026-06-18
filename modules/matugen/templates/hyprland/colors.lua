@@ -6,7 +6,7 @@ hl.config({
     },
   },
   misc = {
-    background_color = "rgba({{colors.surface.dark.hex_stripped}}FF)",
+    background_color = "rgba({{colors.surface.default.hex_stripped}}FF)",
   },
 })
 

@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     gnome-themes-extra  # For color-reload-gtk-module
+    adw-gtk3
   ];
 
   gtk = {
@@ -9,11 +10,6 @@
 
     font.name = "Noto Sans";
     font.size = 10;
-
-    theme = {
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
-    };
 
     gtk4.theme = null;
 
@@ -23,11 +19,11 @@
     # };
 
     gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
+# gtk-application-prefer-dark-theme = true;
       gtk-modules = "colorreload-gtk-module";
     };
     gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
+# gtk-application-prefer-dark-theme = true;
     };
     
     gtk3.extraCss = ''
