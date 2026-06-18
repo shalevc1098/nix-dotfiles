@@ -5,7 +5,7 @@
 }:
 {
   home.packages = with pkgs; [
-    firefoxpwa
+    # firefoxpwa
     pywalfox-native
   ];
 
@@ -13,7 +13,7 @@
     enable = true;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
     nativeMessagingHosts = [
-      pkgs.firefoxpwa
+      # pkgs.firefoxpwa
       pkgs.pywalfox-native
     ];
 
