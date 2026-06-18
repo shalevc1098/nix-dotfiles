@@ -8,7 +8,7 @@
   ...
 }:
 {
-  # imports = [ ./hidpi-xprop.nix ];
+  imports = [ ./hidpi.nix ];
 
   home.packages = with pkgs; [
     brightnessctl
