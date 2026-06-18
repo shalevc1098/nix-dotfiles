@@ -13,9 +13,10 @@
     paths = [ "/home/${username}" ];
     exclude = [
       "/home/${username}/.cache"
-      "/home/${username}/.var/app/*/cache"
+      "/home/${username}/.var"
       "/home/${username}/.local/share/Steam/steamapps/common"
       "/home/${username}/vms"
+      "/home/${username}/user"
       "**/node_modules"
     ];
     pruneOpts = [
@@ -25,7 +26,7 @@
     ];
     timerConfig = {
       OnCalendar = "daily";
-      Persist = true;
+      Persistent = true;
       RandomizedDelaySec = "1h";
     };
   };
