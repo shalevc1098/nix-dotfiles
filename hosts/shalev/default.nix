@@ -66,7 +66,7 @@ let
     ../../modules/sox
     ../../modules/ssh
     ../../modules/starship
-    # ../../modules/sunshine
+    ../../modules/sunshine
     # ../../modules/swayosd
     ../../modules/tailscale
     ../../modules/telegram
