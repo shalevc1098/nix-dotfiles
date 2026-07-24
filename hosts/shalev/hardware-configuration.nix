@@ -107,12 +107,11 @@
 
   fileSystems."/mnt/T7Shield" = {
     device = "/dev/disk/by-uuid/68E8976DE8973870";
-    fsType = "ntfs-3g";
+    fsType = "ntfs3";
     options = [
       "defaults"
       "nofail"
       "windows_names"
-      "locale=en_US.utf8"
       "uid=1000"
       "gid=100"
       "umask=0022"
