@@ -19,13 +19,11 @@ in
 
   # Use the grub boot loader.
   boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-    };
     grub = {
       enable = true;
       device = "nodev";
       efiSupport = true;
+      efiInstallAsRemovable = true;
       useOSProber = true;
       default = "saved";
       configurationLimit = 5;
