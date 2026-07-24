@@ -9,12 +9,6 @@
     }).overrideAttrs (oldAttrs: {
       configureFlags = [ "--enable-qt6" ] ++ (builtins.filter (flag: flag != "--enable-qt5") oldAttrs.configureFlags);
 
-      # Patch Qt6 incompatibility in GuiSymbols.cpp
-      postPatch = (oldAttrs.postPatch or "") + ''
-        substituteInPlace src/frontends/qt/GuiSymbols.cpp \
-          --replace-fail '.arg(QString("%1").arg(c, 0, 16).toUpper())' '.arg(QString::number(static_cast<uint>(c), 16).toUpper())'
-      '';
-
       # Skip tests - they have linking issues with Qt6
       doCheck = false;
     }))
