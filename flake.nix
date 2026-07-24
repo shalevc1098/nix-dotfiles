@@ -89,6 +89,8 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     nur.url = "github:nix-community/NUR";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =

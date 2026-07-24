@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   nvidiaVersion = builtins.replaceStrings [ "." ] [ "-" ]
     config.hardware.nvidia.package.version;
 in
 {
+  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
+
   services.flatpak.enable = true;
 
   # Auto-install matching Flatpak NVIDIA GL runtime on rebuild
