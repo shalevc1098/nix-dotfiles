@@ -170,6 +170,9 @@ in
   # Allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
+    permittedInsecurePackages = [
+      "pnpm-10.29.2"
+    ];
   };
 
   documentation.nixos.enable = false;
