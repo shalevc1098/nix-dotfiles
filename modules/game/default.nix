@@ -2,6 +2,8 @@
   homeModule = {
     imports = [
       ./minecraft/home.nix
+      ./ppsspp/home.nix
+      ./rpcs3/home.nix
       ./scanmem/home.nix
       ./steam/home.nix
     ];
@@ -15,6 +17,7 @@
 
         # ./aagl/nixos.nix
         ./controller/nixos.nix
+        ./rpcs3/nixos.nix
         ./steam/nixos.nix
       ];
 
