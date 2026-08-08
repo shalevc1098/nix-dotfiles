@@ -8,7 +8,7 @@
 
   services.restic.backups.home = {
     initialize = true;
-    repository = "sftp:shalev@synology:/backups/nixos";
+    repository = "sftp:shalev@truenas:/mnt/hdd/backups/nixos";
     passwordFile = config.sops.secrets.restic_password.path;
     paths = [ "/home/${username}" ];
     exclude = [
