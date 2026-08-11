@@ -28,16 +28,29 @@
     ];
 
     bind = [
-      (hyprLib.mkBindExec "SUPER + Super_L" "pgrep quickshell && dms ipc call spotlight toggle || (pgrep wofi && pkill wofi || wofi)")
+      # keyd turns a SUPER tap into SUPER + Space; holding SUPER stays a modifier
+      (hyprLib.mkBindExec "SUPER + Space" "pgrep quickshell && dms ipc call spotlight toggle || (pgrep wofi && pkill wofi || wofi)")
       (hyprLib.mkBindExec "CTRL + SUPER + R" "pkill quickshell; sleep 0.2 && dms run &")
     ];
 
     layer_rule = [
-      { match = { namespace = "dms:bar"; }; blur = true; ignore_alpha = 0.0; xray = true; }
+      {
+        match = {
+          namespace = "dms:bar";
+        };
+        blur = true;
+        ignore_alpha = 0.0;
+        xray = true;
+      }
     ];
 
     window_rule = [
-      { match = { class = "com.danklinux.dms"; }; opacity = "0.86 0.79"; }
+      {
+        match = {
+          class = "com.danklinux.dms";
+        };
+        opacity = "0.86 0.79";
+      }
     ];
   };
 

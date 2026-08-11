@@ -41,7 +41,7 @@ let
     ../../modules/hypr
     ../../modules/jellyfin-desktop
     ../../modules/kde
-    # ../../modules/keyd
+    ../../modules/keyd
     ../../modules/kitty
     # ../../modules/libre-office
     ../../modules/localsend
@@ -127,7 +127,14 @@ lib.nixosSystem {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = { inherit inputs hyprLib hostMonitors username; };
+      home-manager.extraSpecialArgs = {
+        inherit
+          inputs
+          hyprLib
+          hostMonitors
+          username
+          ;
+      };
       home-manager.backupFileExtension = "backup";
 
       home-manager.users.${username} = {
