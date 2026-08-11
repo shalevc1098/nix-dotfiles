@@ -53,8 +53,4 @@
       }
     ];
   };
-
-  home.sessionVariables = {
-    DMS_HYPRLAND_EXCLUSIVE_FOCUS = 1;
-  };
 }
