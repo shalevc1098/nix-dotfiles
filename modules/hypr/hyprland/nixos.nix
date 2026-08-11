@@ -12,16 +12,19 @@
 
   programs.hyprland = {
     enable = true;
-    withUWSM = true;
 
     # package = pkgs.hyprland;
     # portalPackage = pkgs.xdg-desktop-portal-hyprland;
 
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   environment.systemPackages = [ pkgs.xwayland ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # the cap_sys_nice wrapper's capset() fails with EPERM in-session
+  security.wrappers.Hyprland.enable = lib.mkForce false;
 }

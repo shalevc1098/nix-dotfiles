@@ -16,12 +16,12 @@
   # xdg.configFile."hypr/hyprlock.conf".source = builtins.toString ./hyprlock.conf;
 
   wayland.windowManager.hyprland.settings.bind = [
-    (hyprLib.mkBindExec "SUPER + L" "uwsm app -- hyprlock")
+    (hyprLib.mkBindExec "SUPER + L" "hyprlock")
   ];
 
   services.hypridle.settings = {
     general = {
-      lock_cmd = "pidof hyprlock || uwsm app -- hyprlock";
+      lock_cmd = "pidof hyprlock || hyprlock";
     };
   };
 }

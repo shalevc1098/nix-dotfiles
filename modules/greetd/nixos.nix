@@ -1,5 +1,4 @@
 {
-  pkgs,
   username,
   ...
 }:
@@ -8,7 +7,8 @@
     enable = true;
     settings = rec {
       initial_session = {
-        command = "uwsm start hyprland-uwsm.desktop";
+        # uwsm supervision tears the session down mid-startup
+        command = "Hyprland";
         user = username;
       };
       default_session = initial_session;

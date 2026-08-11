@@ -25,7 +25,7 @@
         text = "save";
       }
       {
-        action = "uwsm stop";
+        action = "loginctl terminate-user ${config.home.username}";
         keybind = "e";
         label = "logout";
         text = "logout";
@@ -80,6 +80,11 @@
   };
 
   wayland.windowManager.hyprland.settings.layer_rule = [
-    { match = { namespace = "logout_dialog"; }; blur = true; }
+    {
+      match = {
+        namespace = "logout_dialog";
+      };
+      blur = true;
+    }
   ];
 }

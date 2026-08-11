@@ -34,6 +34,6 @@ in
   # };
 
   wayland.windowManager.hyprland.settings.bind = [
-    (hyprLib.mkBindExec "SUPER + C" "uwsm app -- code")
+    (hyprLib.mkBindExec "SUPER + C" "code")
   ];
 }
