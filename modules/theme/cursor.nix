@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  cursor = config.home.pointerCursor;
+in
 {
   imports = [ inputs.plasma-manager.homeModules.plasma-manager ];
 
@@ -22,7 +25,7 @@
     configFile = {
       "kcminputrc" = {
         "Mouse" = {
-          "cursorSize" = config.home.pointerCursor.size;
+          "cursorSize" = cursor.size;
         };
       };
     };

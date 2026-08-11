@@ -1,8 +1,14 @@
 {
   config,
+  hyprLib,
   pkgs,
   ...
 }:
+let
+  qtDir = version: "${config.home.profileDirectory}/lib/qt-${version}";
+  qt5Dir = qtDir pkgs.libsForQt5.qtbase.version;
+  qt6Dir = qtDir "6";
+in
 {
   home.packages = with pkgs; [
     kdePackages.plasma-integration
@@ -25,6 +31,11 @@
 
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
-    QML_IMPORT_PATH = "${config.home.profileDirectory}/lib/qt-6/qml";
+    QML_IMPORT_PATH = "${qt6Dir}/qml";
   };
+
+  wayland.windowManager.hyprland.settings.env = [
+    (hyprLib.mkEnv "QT_PLUGIN_PATH" "${qt5Dir}/plugins:${qt6Dir}/plugins")
+    (hyprLib.mkEnv "QML2_IMPORT_PATH" "${qt5Dir}/qml:${qt6Dir}/qml")
+  ];
 }

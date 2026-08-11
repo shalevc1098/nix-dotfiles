@@ -8,7 +8,10 @@
   ...
 }:
 {
-  imports = [ ./hidpi.nix ];
+  imports = [
+    ./env.nix
+    ./hidpi.nix
+  ];
 
   home.packages = with pkgs; [
     brightnessctl
